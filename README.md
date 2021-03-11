@@ -7,13 +7,13 @@
 - 降低新成员融入团队的成本
 - 提高开发效率、团队协作效率、降低沟通成本
 - 实现统一的代码风格，方便review，提高项目的可维护性
-- 为未来页面外包
+- 为未来页面外包统一规则，方便管理
 
 ## 具体规范
 
 - [项目工程规范](page/project.md)
 - [JS规范](page/js.md)
-- [JS规范 - react](page/react.md)
+- [JS规范 - React](page/react.md)
 - [JS规范 - Node](page/node.md)
 - [CSS规范](page/css.md)
 - [HTML规范](page/html.md)
