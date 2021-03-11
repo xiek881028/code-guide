@@ -1,0 +1,521 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>JS规范 - react · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="node.html" />
+    
+    
+    <link rel="prev" href="js.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    前端代码规范
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="project.html">
+            
+                <a href="project.html">
+            
+                    
+                    项目工程规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="js.html">
+            
+                <a href="js.html">
+            
+                    
+                    JS规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="react.html">
+            
+                <a href="react.html">
+            
+                    
+                    JS规范 - react
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="node.html">
+            
+                <a href="node.html">
+            
+                    
+                    JS规范 - Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="css.html">
+            
+                <a href="css.html">
+            
+                    
+                    CSS规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="html.html">
+            
+                <a href="html.html">
+            
+                    
+                    HTML规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="img.html">
+            
+                <a href="img.html">
+            
+                    
+                    图片规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >JS规范 - react</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="node-&#x89C4;&#x8303;">node &#x89C4;&#x8303;</h1>
+<p>&#x8BE5;&#x6587;&#x6863;&#x4E3B;&#x8981;&#x7684;&#x8BBE;&#x8BA1;&#x76EE;&#x6807;&#x662F;&#x7EDF;&#x4E00; js &#x7684;&#x4E00;&#x81F4;&#x6027;&#x548C;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#xFF0C;&#x8865;&#x5145;react&#x4E13;&#x5C5E;&#x90E8;&#x5206;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;&#x7EA6;&#x5B9A;">&#x4F7F;&#x7528;&#x7EA6;&#x5B9A;</h2>
+<h3 id="&#x6587;&#x4EF6;&#x7EC4;&#x7EC7;">&#x6587;&#x4EF6;&#x7EC4;&#x7EC7;</h3>
+<ul>
+<li><em>[&#x5F3A;&#x5236;]</em> &#x540C;&#x4E00;&#x76EE;&#x5F55;&#x4E0B;&#x4E0D;&#x5F97;&#x62E5;&#x6709;&#x540C;&#x540D;&#x7684;<code>.js</code>&#x548C;<code>.jsx</code>&#x6587;&#x4EF6;</li>
+<li><em>[&#x5F3A;&#x5236;]</em> &#x7EC4;&#x4EF6;&#x6587;&#x4EF6;&#x4F7F;&#x7528;&#x4E00;&#x81F4;&#x7684;<code>.js</code>&#x6216; <code>.jsx</code>&#x3002;&#x540E;&#x7F00;&#x7981;&#x6B62;&#x90E8;&#x5206;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;<code>.js</code>&#xFF0C;&#x90E8;&#x5206;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528; <code>.jsx</code></li>
+<li><em>[&#x5F3A;&#x5236;]</em> &#x6BCF;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4EE5;<code>export default</code>&#x7684;&#x5F62;&#x5F0F;&#x66B4;&#x9732;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;<blockquote>
+<p>&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F46;&#x4EC5;&#x5141;&#x8BB8;&#x901A;&#x8FC7;export default&#x66B4;&#x9732;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x5176;&#x5B83;&#x7EC4;&#x4EF6;&#x5747;&#x5B9A;&#x4E49;&#x4E3A;&#x5185;&#x90E8;&#x7EC4;&#x4EF6;&#x3002;</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="&#x547D;&#x540D;&#x89C4;&#x5219;">&#x547D;&#x540D;&#x89C4;&#x5219;</h3>
+<ul>
+<li><em>[&#x5F3A;&#x5236;]</em> &#x7EC4;&#x4EF6;&#x540D;&#x79F0;&#x4E0E;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x4FDD;&#x6301;&#x76F8;&#x540C;&#x3002;&#x540C;&#x65F6;&#x7EC4;&#x4EF6;&#x540D;&#x79F0;&#x5E94;&#x5F53;&#x80FD;&#x4F53;&#x73B0;&#x51FA;&#x7EC4;&#x4EF6;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4EE5;&#x4FBF;&#x901A;&#x8FC7;&#x89C2;&#x5BDF;&#x6587;&#x4EF6;&#x540D;&#x5373;&#x786E;&#x5B9A;&#x4F7F;&#x7528;&#x54EA;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;</li>
+<li><em>[&#x5F3A;&#x5236;]</em> &#x7EC4;&#x4EF6;&#x540D;&#x91C7;&#x7528;&#x5927;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#xFF0C;&#x9075;&#x5B88;<code>react</code>&#x5BF9;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x8C03;&#x7528;&#x7684;&#x5EFA;&#x8BAE;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md" target="_blank">react/jsx-pascal-case</a></li>
+</ul>
+<h3 id="&#x5BF9;&#x9F50;">&#x5BF9;&#x9F50;</h3>
+<ul>
+<li><p><em>[&#x5F3A;&#x5236;]</em> &#x9075;&#x5FAA;&#x4EE5;&#x4E0B;JSX&#x8BED;&#x6CD5;&#x7684;&#x5BF9;&#x9F50;&#x98CE;&#x683C;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md" target="_blank">react/jsx-closing-bracket-location</a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo superLongParam=<span class="hljs-string">&apos;bar&apos;</span>
+    anotherSuperLongParam=<span class="hljs-string">&apos;baz&apos;</span> /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo
+  superLongParam=<span class="hljs-string">&apos;bar&apos;</span>
+  anotherSuperLongParam=<span class="hljs-string">&apos;baz&apos;</span>
+/&gt;
+
+<span class="hljs-comment">// if props fit in one line then keep it on the same line</span>
+&lt;Foo bar=<span class="hljs-string">&apos;bar&apos;</span> /&gt;
+
+<span class="hljs-comment">// children get indented normally</span>
+&lt;Foo
+  superLongParam=<span class="hljs-string">&apos;bar&apos;</span>
+  anotherSuperLongParam=<span class="hljs-string">&apos;baz&apos;</span>
+&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Quux</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Foo</span>&gt;</span></span>
+
+<span class="hljs-comment">// bad</span>
+{showButton &amp;&amp;
+  &lt;Button /&gt;
+}
+
+// bad
+{
+  showButton &amp;&amp;
+    &lt;Button /&gt;
+}
+
+// good
+{showButton &amp;&amp; (
+  &lt;Button /&gt;
+)}
+
+// good
+{showButton &amp;&amp; &lt;Button /&gt;}
+</code></pre>
+</li>
+</ul>
+<h3 id="&#x7A7A;&#x683C;">&#x7A7A;&#x683C;</h3>
+<ul>
+<li><p><em>[&#x5F3A;&#x5236;]</em> &#x81EA;&#x95ED;&#x5408;&#x7684;&#x6807;&#x7B7E;&#x524D;&#x8981;&#x52A0;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;. eslint: <a href="https://eslint.org/docs/rules/no-multi-spaces" target="_blank">no-multi-spaces</a>, <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md" target="_blank">react/jsx-tag-spacing</a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo/&gt;
+
+<span class="hljs-comment">// very bad</span>
+&lt;Foo                 /&gt;
+
+<span class="hljs-comment">// bad</span>
+&lt;Foo
+/&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo /&gt;
+</code></pre>
+</li>
+<li><p><em>[&#x5F3A;&#x5236;]</em> &#x4E0D;&#x8981;&#x5728; JSX &#x7684;&#x82B1;&#x62EC;&#x53F7;&#x91CC;&#x8FB9;&#x52A0;&#x7A7A;&#x683C;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md" target="_blank">react/jsx-curly-spacing</a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo bar={ baz } /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo bar={baz} /&gt;
+</code></pre>
+</li>
+</ul>
+<h3 id="&#x5C5E;&#x6027;">&#x5C5E;&#x6027;</h3>
+<ul>
+<li><p><em>[&#x5F3A;&#x5236;]</em> &#x5C5E;&#x6027;&#x540D;&#x4F7F;&#x7528;&#x5C0F;&#x9A7C;&#x5CF0;</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo
+  UserName=<span class="hljs-string">&apos;hello&apos;</span>
+  phone_number={<span class="hljs-number">12345678</span>}
+/&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo
+  userName=<span class="hljs-string">&apos;hello&apos;</span>
+  phoneNumber={<span class="hljs-number">12345678</span>}
+/&gt;
+</code></pre>
+</li>
+<li><p><em>[&#x5F3A;&#x5236;]</em> &#x5BF9;&#x4E8E;&#x591A;&#x5C5E;&#x6027;&#x9700;&#x8981;&#x6362;&#x884C;&#xFF0C;&#x4ECE;&#x7B2C;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x5F00;&#x59CB;&#xFF0C;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x4E00;&#x884C;</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;SomeComponent longProp={longProp} anotherLongProp={anotherLongProp} /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;SomeComponent
+  longProp={longProp}
+  anotherLongProp={anotherLongProp}
+/&gt;
+</code></pre>
+</li>
+<li><p><em>[&#x5EFA;&#x8BAE;]</em> &#x5F53;&#x5C5E;&#x6027;&#x503C;&#x4E3A;true&#x65F6;&#x53EF;&#x4EE5;&#x7701;&#x7565;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md" target="_blank">react/jsx-boolean-value</a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo
+  hidden={<span class="hljs-literal">true</span>}
+/&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo
+  hidden
+/&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo hidden /&gt;
+</code></pre>
+</li>
+</ul>
+<h3 id="&#x5706;&#x62EC;&#x53F7;">&#x5706;&#x62EC;&#x53F7;</h3>
+<ul>
+<li><p><em>[&#x5F3A;&#x5236;]</em> &#x5F53; JSX &#x6807;&#x7B7E;&#x8D85;&#x8FC7;&#x4E00;&#x884C;&#x65F6;&#x4F7F;&#x7528;&#x5706;&#x62EC;&#x53F7;&#x5305;&#x88F9;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/wrap-multilines.md" target="_blank">react/wrap-multilines</a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+render () {
+  <span class="hljs-keyword">return</span> &lt;MyComponent className=&apos;long body&apos; foo=&apos;bar&apos;&gt;
+          &lt;MyChild /&gt;
+        &lt;/MyComponent&gt;
+}
+
+// good
+render () {
+  return (
+    &lt;MyComponent className=&apos;long body&apos; foo=&apos;bar&apos;&gt;
+      &lt;MyChild /&gt;
+    &lt;/MyComponent&gt;
+  )
+}
+
+// good, when single line
+render () {
+  const body = &lt;div&gt;hello&lt;/div&gt;
+  return &lt;MyComponent&gt;{body}&lt;/MyComponent&gt;
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="&#x6807;&#x7B7E;">&#x6807;&#x7B7E;</h3>
+<ul>
+<li><p><em>[&#x5F3A;&#x5236;]</em> &#x6CA1;&#x6709;&#x5B50;&#x5143;&#x7D20;&#x7684;&#x6807;&#x7B7E;&#x9700;&#x8981;&#x81EA;&#x95ED;&#x5408;</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo className=<span class="hljs-string">&apos;stuff&apos;</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">Foo</span>&gt;</span></span>
+
+<span class="hljs-comment">// good</span>
+&lt;Foo className=<span class="hljs-string">&apos;stuff&apos;</span> /&gt;
+</code></pre>
+</li>
+<li><p><em>[&#x5F3A;&#x5236;]</em> &#x5982;&#x679C;&#x7EC4;&#x4EF6;&#x5305;&#x542B;&#x591A;&#x884C;&#x5C5E;&#x6027;&#xFF0C;&#x5728;&#x65B0;&#x7684;&#x4E00;&#x884C;&#x95ED;&#x5408;&#x6807;&#x7B7E;. eslint:<a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md" target="_blank">react/jsx-closing-bracket-location</a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo
+  bar=<span class="hljs-string">&apos;bar&apos;</span>
+  baz=<span class="hljs-string">&apos;baz&apos;</span> /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo
+  bar=<span class="hljs-string">&apos;bar&apos;</span>
+  baz=<span class="hljs-string">&apos;baz&apos;</span>
+/&gt;
+</code></pre>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="js.html" class="navigation navigation-prev " aria-label="Previous page: JS规范">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="node.html" class="navigation navigation-next " aria-label="Next page: JS规范 - Node">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JS规范 - react","level":"1.2.3","depth":2,"next":{"title":"JS规范 - Node","level":"1.2.4","depth":2,"path":"page/node.md","ref":"page/node.md","articles":[]},"previous":{"title":"JS规范","level":"1.2.2","depth":2,"path":"page/js.md","ref":"page/js.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"weibo":false,"all":["facebook","google","twitter","weibo","instapaper"],"google":false,"twitter":true,"vk":false,"instapaper":false,"facebook":true},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"page/react.md","mtime":"2021-03-11T07:13:55.945Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-11T08:27:26.429Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

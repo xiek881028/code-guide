@@ -2,6 +2,7 @@
   "title": "前端代码规范",
   "author": "xiek",
   "language": "zh-hans",
+  "root": "src",
   "plugins": [
     "-lunr",
     "-search",
@@ -25,5 +26,6 @@
     "theme-default": {
       "showLevel": true
     }
-  }
+  },
+  "output": null
 }
