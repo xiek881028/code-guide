@@ -4,6 +4,9 @@
   "description": "前端代码规范",
   "author": "xiek <285985285@qq.com>",
   "scripts": {
-    "build": "gitbook build src docs"
+    "build": "gitbook build . docs && node shell.js"
+  },
+  "devDependencies": {
+    "fs-extra": "^9.1.0"
   }
 }
