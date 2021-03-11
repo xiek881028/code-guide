@@ -1,0 +1,29 @@
+{
+  "title": "前端代码规范",
+  "author": "xiek",
+  "language": "zh-hans",
+  "plugins": [
+    "-lunr",
+    "-search",
+    "search-plus",
+    "prism",
+    "-highlight",
+    "advanced-emoji",
+    "emphasize",
+    "-sharing",
+    "tbfed-pagefooter",
+    "anchors",
+    "back-to-top-button",
+    "theme-comscore"
+  ],
+  "pluginsConfig": {
+    "tbfed-pagefooter": {
+      "copyright": "Copyright &copy xiek 2021",
+      "modify_label": "文档更新时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "theme-default": {
+      "showLevel": true
+    }
+  }
+}
