@@ -1,6 +1,6 @@
 {
   "name": "code-guide",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "description": "前端代码规范",
   "author": "xiek <285985285@qq.com>",
   "scripts": {
@@ -8,5 +8,12 @@
   },
   "devDependencies": {
     "fs-extra": "^9.1.0"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "arrowParens": "avoid",
+    "embeddedLanguageFormatting": "off"
   }
 }

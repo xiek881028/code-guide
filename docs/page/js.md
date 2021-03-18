@@ -2,21 +2,37 @@
 
 该文档主要的设计目标是统一 js 的一致性和可维护性。
 
+## 原则
+
+### 格式风格
+
+在**格式风格**上，以[prettier](https://prettier.io/)的格式规范为准。当本规范**有关格式风格部分**与[prettier](https://prettier.io/)规则不符时，以[prettier](https://prettier.io/)标准为准。对于该原则设定有疑惑可以阅读[为什么是 prettier](#为什么是-prettier)
+
+### 代码质量
+
+**有关代码质量部分**的规则，以本规范为准。该部分的规则，会使用`eslint`进行检查
+
+## 标注说明
+
+- <font color="#16c79a">[风格]</font>：表示该规范是`格式风格`类型，可以使用[prettier](https://prettier.io/)自动格式化，可无需关注；
+- <font color="#f0c929">[建议]</font>：表示该规范是`代码质量`类型，书写时需要注意，对于提升代码质量有一定帮助，不做强制要求；
+- <font color="#ff7171">[质量]</font>：表示该规范是`代码质量`类型，书写时需要注意，对于提升代码质量有较大帮助。必要时会采用`eslint`进行检查。
+
 ## 代码风格
 
 ### 模块风格
 
-- _\[强制]_ 为了保证模块兼容性，运行在`nodejs`或需要同时运行在`nodejs`与浏览器的环境里的模块，使用`CommonJS`风格，只需要在浏览器端运行的模块，推荐使用`ES6`风格。
+- <font color="#ff7171">[质量]</font> 为了保证模块兼容性，运行在`nodejs`或需要同时运行在`nodejs`与浏览器的环境里的模块，使用`CommonJS`风格，只需要在浏览器端运行的模块，推荐使用`ES6`风格。
 
-  > 前端模块目前分为`CommonJS`，`AMD`，`CMD`，`ES6`4种风格，`nodejs`是`CommonJS`规范的主要实践者，可以保证最好的兼容性
+  > 前端模块目前分为`CommonJS`，`AMD`，`CMD`，`ES6`4 种风格，`nodejs`是`CommonJS`规范的主要实践者，可以保证最好的兼容性
 
 ### 文件
 
-- _\[强制]_ `js`文件使用`utf-8`编码
+- <font color="#ff7171">[质量]</font> `js`文件使用`utf-8`编码
 
 ### 缩进
 
-- _\[强制]_ tab 用两个空格. eslint: [`indent`](http://eslint.org/docs/rules/indent.html)
+- <font color="#16c79a">[风格]</font> tab 用两个空格. eslint: [`indent`](http://eslint.org/docs/rules/indent.html)
 
   ```javascript
   // bad
@@ -35,7 +51,7 @@
   }
   ```
 
-- _\[强制]_ 在大括号前空一格。 eslint: [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks.html)
+- <font color="#16c79a">[风格]</font> 在大括号前空一格。 eslint: [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks.html)
 
   ```javascript
   // bad
@@ -61,7 +77,7 @@
   });
   ```
 
-- _\[待定]_ 在控制语句(`if`, `while` 等)的圆括号前空一格。在函数调用和定义时，参数列表和函数名之间不空格。 eslint: [`keyword-spacing`](http://eslint.org/docs/rules/keyword-spacing.html)
+- <font color="#16c79a">[风格]</font> 在控制语句(`if`, `while` 等)的圆括号前空一格。在函数调用和定义时，参数列表和函数名之间不空格。 eslint: [`keyword-spacing`](http://eslint.org/docs/rules/keyword-spacing.html)
 
   ```javascript
   // bad
@@ -85,7 +101,7 @@
   }
   ```
 
-- _\[强制]_ 用空格来隔开运算符。 eslint: [`space-infix-ops`](http://eslint.org/docs/rules/space-infix-ops.html)
+- <font color="#16c79a">[风格]</font> 用空格来隔开运算符。 eslint: [`space-infix-ops`](http://eslint.org/docs/rules/space-infix-ops.html)
 
   ```javascript
   // bad
@@ -95,7 +111,7 @@
   const x = y + 5;
   ```
 
-- _\[强制]_ 文件结尾空一行. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
+- <font color="#16c79a">[风格]</font> 文件结尾空一行. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
 
   ```javascript
   // bad
@@ -119,7 +135,7 @@
   export default es6;↵
   ```
 
-- _\[强制]_ 在一个代码块后下一条语句前空一行。
+- <font color="#ff7171">[质量]</font> 在一个代码块后下一条语句前空一行。
 
   ```javascript
   // bad
@@ -161,7 +177,7 @@
   return arr;
   ```
 
-- _\[强制]_ 不要用空白行填充块。 eslint: [`padded-blocks`](http://eslint.org/docs/rules/padded-blocks.html)
+- <font color="#16c79a">[风格]</font> 不要用空白行填充块。 eslint: [`padded-blocks`](http://eslint.org/docs/rules/padded-blocks.html)
 
   ```javascript
   // bad
@@ -193,7 +209,7 @@
   }
   ```
 
-- _\[强制]_ 不要在代码之间使用多个空白行填充。 eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
+- <font color="#16c79a">[风格]</font> 不要在代码之间使用多个空白行填充。 eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
 
   ```javascript
   // bad
@@ -239,7 +255,7 @@
   }
   ```
 
-- _\[强制]_ 圆括号里不要加空格。 eslint: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html)
+- <font color="#16c79a">[风格]</font> 圆括号里不要加空格。 eslint: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html)
 
   ```javascript
   // bad
@@ -263,7 +279,7 @@
   }
   ```
 
-- _\[强制]_ 方括号里不要加空格。看示例。 eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html)
+- <font color="#16c79a">[风格]</font> 方括号里不要加空格。看示例。 eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html)
 
   ```javascript
   // bad
@@ -275,7 +291,7 @@
   console.log(foo[0]);
   ```
 
-- _\[强制]_ 花括号里加空格。 eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html)
+- <font color="#16c79a">[风格]</font> 花括号里加空格。 eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html)
 
   ```javascript
   // bad
@@ -285,8 +301,8 @@
   const foo = { clark: 'kent' };
   ```
 
-- _\[建议]_ 避免一行代码超过 100 个字符（包含空格）。
-- _\[强制]_ 注意： 对于[上面——strings--line-length](#strings--line-length)，长字符串不受此规则限制，不应分解。 eslint: [`max-len`](http://eslint.org/docs/rules/max-len.html)
+- <font color="#16c79a">[风格]</font> 避免一行代码超过 80 个字符（包含空格）。
+- <font color="#16c79a">[风格]</font> 注意： 对于[上面——strings--line-length](#strings--line-length)，长字符串不受此规则限制，不应分解。 eslint: [`max-len`](http://eslint.org/docs/rules/max-len.html)
 
   > Why? 这样确保可读性和可维护性
 
@@ -315,7 +331,7 @@
     .fail(() => console.log('You have failed this city.'));
   ```
 
-- _\[强制]_ 作为语句的花括号内也要加空格 —— `{` 后和 `}` 前都需要空格。 eslint: [`block-spacing`](https://eslint.org/docs/rules/block-spacing)
+- <font color="#16c79a">[风格]</font> 作为语句的花括号内也要加空格 —— `{` 后和 `}` 前都需要空格。 eslint: [`block-spacing`](https://eslint.org/docs/rules/block-spacing)
 
   ```javascript
   // bad
@@ -327,7 +343,7 @@
   if (foo) { bar = 0; }
   ```
 
-- _\[强制]_ `,` 前不要空格， `,` 后需要空格。 eslint: [`comma-spacing`](https://eslint.org/docs/rules/comma-spacing)
+- <font color="#16c79a">[风格]</font> `,` 前不要空格， `,` 后需要空格。 eslint: [`comma-spacing`](https://eslint.org/docs/rules/comma-spacing)
 
   ```javascript
   // bad
@@ -339,7 +355,7 @@
   var arr = [1, 2];
   ```
 
-- _\[强制]_ 计算属性内要空格。参考上述花括号和中括号的规则。 eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
+- <font color="#16c79a">[风格]</font> 计算属性内要空格。参考上述花括号和中括号的规则。 eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
 
   ```javascript
   // bad
@@ -355,7 +371,7 @@
   obj[foo[bar]]
   ```
 
-- _\[强制]_ 调用函数时，函数名和小括号之间不要空格。 eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
+- <font color="#16c79a">[风格]</font> 调用函数时，函数名和小括号之间不要空格。 eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
 
   ```javascript
   // bad
@@ -368,7 +384,7 @@
   func();
   ```
 
-- _\[强制]_ 在对象的字面量属性中， `key` `value` 之间要有空格。 eslint: [`key-spacing`](https://eslint.org/docs/rules/key-spacing)
+- <font color="#16c79a">[风格]</font> 在对象的字面量属性中， `key` `value` 之间要有空格。 eslint: [`key-spacing`](https://eslint.org/docs/rules/key-spacing)
 
   ```javascript
   // bad
@@ -379,9 +395,9 @@
   var obj = { "foo": 42 };
   ```
 
-- _\[强制]_ 行末不要空格。 eslint: [`no-trailing-spaces`](https://eslint.org/docs/rules/no-trailing-spaces)
+- <font color="#16c79a">[风格]</font> 行末不要空格。 eslint: [`no-trailing-spaces`](https://eslint.org/docs/rules/no-trailing-spaces)
 
-- _\[强制]_ 避免出现多个空行。 在文件末尾只允许空一行。 eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
+- <font color="#16c79a">[风格]</font> 避免出现多个空行。 在文件末尾只允许空一行。 eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
 
   ```javascript
   // bad
@@ -399,7 +415,7 @@
 
 ### 逗号
 
-- _\[强制]_ 不要前置逗号。 eslint: [`comma-style`](http://eslint.org/docs/rules/comma-style.html)
+- <font color="#16c79a">[风格]</font> 不要前置逗号。 eslint: [`comma-style`](http://eslint.org/docs/rules/comma-style.html)
 
   ```javascript
   // bad
@@ -433,7 +449,7 @@
   };
   ```
 
-- _\[强制]_ 额外结尾逗号: **要** eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html)
+- <font color="#16c79a">[风格]</font> 额外结尾逗号: **要** eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html)
 
   > Why? 这导致 git diffs 更清洁。 此外，像 Babel 这样的转换器会删除转换代码中的额外的逗号，这意味着你不必担心旧版浏览器中的[结尾逗号问题](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas)。
 
@@ -530,7 +546,7 @@
 
 ### 分号
 
-- _\[强制]_ **Yup.** eslint: [`semi`](http://eslint.org/docs/rules/semi.html)
+- <font color="#16c79a">[风格]</font> **Yup.** eslint: [`semi`](http://eslint.org/docs/rules/semi.html)
 
   > Why? 当 JavaScript 遇到没有分号结尾的一行，它会执行[自动插入分号 `Automatic Semicolon Insertion`](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion)这一规则来决定行末是否加分号。如果 JavaScript 在你的断行里错误的插入了分号，就会出现一些古怪的行为。当新的功能加到 JavaScript 里后， 这些规则会变得更复杂难懂。显示的结束语句，并通过配置代码检查去捕获没有带分号的地方可以帮助你防止这种错误。
 
@@ -546,19 +562,13 @@
     const name = 'Skywalker';
     return name;
   }());
-
-  // good, 行首加分号，避免文件被连接到一起时立即执行函数被当做变量来执行。
-  ;(() => {
-    const name = 'Skywalker';
-    return name;
-  }());
   ```
 
   [Read more](https://stackoverflow.com/questions/7365172/semicolon-before-self-invoking-function/7365214%237365214).
 
 ### 命名约定
 
-- _\[强制]_ 避免用一个字母命名，让你的命名可描述。 eslint: [`id-length`](http://eslint.org/docs/rules/id-length)
+- <font color="#ff7171">[质量]</font> 避免用一个字母命名，让你的命名可描述。 eslint: [`id-length`](http://eslint.org/docs/rules/id-length)
 
   ```javascript
   // bad
@@ -572,7 +582,7 @@
   }
   ```
 
-- _\[强制]_ 用小驼峰式命名你的对象、函数、实例。 eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html)
+- <font color="#ff7171">[质量]</font> 用小驼峰式命名你的对象、函数、实例。 eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html)
 
   ```javascript
   // bad
@@ -585,7 +595,7 @@
   function thisIsMyFunction() {}
   ```
 
-- _\[强制]_ 用大驼峰式命名类。 eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html)
+- <font color="#ff7171">[质量]</font> 用大驼峰式命名类。 eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html)
 
   ```javascript
   // bad
@@ -609,7 +619,7 @@
   });
   ```
 
-- _\[强制]_ 不要用前置或后置下划线。 eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html)
+- <font color="#f0c929">[建议]</font> 不要用前置或后置下划线。 eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html)
 
   > Why? JavaScript 没有私有属性或私有方法的概念。尽管前置下划线通常的概念上意味着“private”，事实上，这些属性是完全公有的，因此这部分也是你的 API 的内容。这一概念可能会导致开发者误以为更改这个不会导致崩溃或者不需要测试。 如果你想要什么东西变成“private”，那就不要让它在这里出现。
 
@@ -623,7 +633,7 @@
   this.firstName = 'Panda';
   ```
 
-- _\[建议]_ 不要保存引用`this`， 用箭头函数或[函数绑定——Function#bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
+- <font color="#f0c929">[建议]</font> 不要保存引用`this`， 用箭头函数或[函数绑定——Function#bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
 
   ```javascript
   // bad
@@ -650,7 +660,7 @@
   }
   ```
 
-- _\[强制]_ export default 导出模块 A，则这个文件名也叫 A.\*， import 时候的参数也叫 A。 大小写完全一致。
+- <font color="#ff7171">[质量]</font> export default 导出模块 A，则这个文件名也叫 A.\*， import 时候的参数也叫 A。 大小写完全一致。
 
   ```javascript
   // file 1 contents
@@ -687,7 +697,7 @@
   // ^ supports both insideDirectory.js and insideDirectory/index.js
   ```
 
-- _\[强制]_ 当你 export-default 一个函数时，函数名用小驼峰，文件名需要和函数名一致。
+- <font color="#ff7171">[质量]</font> 当你 export-default 一个函数时，函数名用小驼峰，文件名需要和函数名一致。
 
   ```javascript
   function makeStyleGuide() {
@@ -697,7 +707,7 @@
   export default makeStyleGuide;
   ```
 
-- _\[强制]_ 当你 export 一个结构体/类/单例/函数库/对象 时用大驼峰。
+- <font color="#ff7171">[质量]</font> 当你 export 一个结构体/类/单例/函数库/对象 时用大驼峰。
 
   ```javascript
   const AirbnbStyleGuide = {
@@ -707,7 +717,7 @@
   export default AirbnbStyleGuide;
   ```
 
-- _\[强制]_ 简称和缩写应该全部大写或全部小写。
+- <font color="#ff7171">[质量]</font> 简称和缩写应该全部大写或全部小写。
 
   > Why? 名字都是给人读的，不是为了适应电脑的算法的。
 
@@ -742,7 +752,7 @@
   ];
   ```
 
-- _\[强制]_ 你可以用全大写字母设置静态变量，他需要满足三个条件。
+- <font color="#ff7171">[质量]</font> 你可以用全大写字母设置静态变量，他需要满足三个条件。
 
   1. 导出变量
   1. 是 `const` 定义的， 保证不能被改变
@@ -786,23 +796,23 @@
 
 ### 判断
 
-- _\[建议]_ 对于多层的`if/else`嵌套判断，应尽量减少不必要的嵌套，简化判断逻辑
+- <font color="#f0c929">[建议]</font> 对于多层的`if/else`嵌套判断，应尽量减少不必要的嵌套，简化判断逻辑
 
-- _\[建议]_ 对于单一变量的多条件判断，在保证阅读体验的基础上，应减少代码量，避免臃肿
+- <font color="#f0c929">[建议]</font> 对于单一变量的多条件判断，在保证阅读体验的基础上，应减少代码量，避免臃肿
 
 ### 异常处理
 
-- _\[强制]_ catch时请分清稳定代码和非稳定代码，稳定代码指的是无论如何不会出错的代码。对于非稳定代码的catch尽可能进行区分异常类型，再做对应的异常处理
+- <font color="#ff7171">[质量]</font> catch 时请分清稳定代码和非稳定代码，稳定代码指的是无论如何不会出错的代码。对于非稳定代码的 catch 尽可能进行区分异常类型，再做对应的异常处理
 
-  > Why? 对大段代码进行try-catch，使程序无法根据不同的异常做出正确的应激反应，也不利于定位问题，这是一种不负责任的表现。
+  > Why? 对大段代码进行 try-catch，使程序无法根据不同的异常做出正确的应激反应，也不利于定位问题，这是一种不负责任的表现。
 
-- _\[建议]_ 捕获异常是为了处理它，不要捕获了却什么都不处理而抛弃之，如果不想处理它，请将该异常抛给它的调用者。最外层的业务使用者，必须处理异常，将其转化为用户可以理解的内容
+- <font color="#f0c929">[建议]</font> 捕获异常是为了处理它，不要捕获了却什么都不处理而抛弃之，如果不想处理它，请将该异常抛给它的调用者。最外层的业务使用者，必须处理异常，将其转化为用户可以理解的内容
 
 ## 语言特性
 
 ### 引用
 
-- _\[强制]_ 所有的赋值都用`const`，避免使用`var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
+- <font color="#ff7171">[质量]</font> 所有的赋值都用`const`，避免使用`var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
 
   > Why? 因为这个确保你不会改变你的初始值，重复引用会导致 bug 和代码难以理解
 
@@ -816,7 +826,7 @@
   const b = 2;
   ```
 
-- _\[强制]_ 如果你一定要对参数重新赋值，那就用`let`，而不是`var`. eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html)
+- <font color="#ff7171">[质量]</font> 如果你一定要对参数重新赋值，那就用`let`，而不是`var`. eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html)
 
   > Why? 因为`let`是块级作用域，而`var`是函数级作用域
 
@@ -834,7 +844,7 @@
   }
   ```
 
-- _\[强制]_ 注意： `let`、`const`都是块级作用域
+- <font color="#ff7171">[质量]</font> 注意： `let`、`const`都是块级作用域
 
   ```javascript
   // const 和 let 都只存在于它定义的那个块级作用域
@@ -848,7 +858,7 @@
 
 ### 对象
 
-- _\[建议]_ 使用字面值创建对象. eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
+- <font color="#f0c929">[建议]</font> 使用字面值创建对象. eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
 
   ```javascript
   // bad
@@ -858,7 +868,7 @@
   const item = {};
   ```
 
-- _\[建议]_ 当创建一个带有动态属性名的对象时，用计算后属性名.
+- <font color="#f0c929">[建议]</font> 当创建一个带有动态属性名的对象时，用计算后属性名.
 
   > Why? 这可以使你将定义的所有属性放在对象的一个地方
 
@@ -882,7 +892,7 @@
   };
   ```
 
-- _\[强制]_ 用对象方法简写. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html)
+- <font color="#ff7171">[质量]</font> 用对象方法简写. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html)
 
   ```javascript
   // bad
@@ -905,7 +915,7 @@
   };
   ```
 
-- _\[强制]_ 用属性值缩写. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html)
+- <font color="#ff7171">[质量]</font> 用属性值缩写. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html)
 
   > Why? 这样写的更少且更可读
 
@@ -923,7 +933,7 @@
   };
   ```
 
-- _\[建议]_ 将你的所有缩写放在对象声明的开始.
+- <font color="#f0c929">[建议]</font> 将你的所有缩写放在对象声明的开始.
 
   > Why? 这样也是为了更方便的知道有哪些属性用了缩写
 
@@ -952,15 +962,15 @@
   };
   ```
 
-- _\[强制]_ 只对那些无效的标示使用引号 `''`. eslint: [`quote-props`](http://eslint.org/docs/rules/quote-props.html)
+- <font color="#16c79a">[风格]</font> 只对那些无效的标示使用引号 `''`. eslint: [`quote-props`](http://eslint.org/docs/rules/quote-props.html)
 
   > Why? 通常我们认为这种方式主观上易读。他优化了代码高亮，并且也更容易被许多 JS 引擎压缩。
 
   ```javascript
   // bad
   const bad = {
-    foo: 3,
-    bar: 4,
+    'foo': 3,
+    'bar': 4,
     'data-blah': 5,
   };
 
@@ -972,7 +982,7 @@
   };
   ```
 
-- _\[建议]_ 不要直接调用`Object.prototype`上的方法，如`hasOwnProperty`, `propertyIsEnumerable`, `isPrototypeOf`。
+- <font color="#f0c929">[建议]</font> 不要直接调用`Object.prototype`上的方法，如`hasOwnProperty`, `propertyIsEnumerable`, `isPrototypeOf`。
 
   > Why? 在一些有问题的对象上， 这些方法可能会被屏蔽掉 - 如：`{ hasOwnProperty: false }` - 或这是一个空对象`Object.create(null)`
 
@@ -991,7 +1001,8 @@
   console.log(has.call(object, key));
   ```
 
-- _\[建议]_ 对象浅拷贝时，更推荐使用扩展运算符[就是`...`运算符]，而不是[`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)。获取对象指定的几个属性时，用对象的 rest 解构运算符[也是`...`运算符]更好。
+- <font color="#f0c929">[建议]</font> 对象浅拷贝时，更推荐使用扩展运算符[就是`...`运算符]，而不是[`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)。获取对象指定的几个属性时，用对象的 rest 解构运算符[也是`...`运算符]更好。
+
   - 这一段不太好翻译出来， 大家看下面的例子就懂了。^.^
 
   ```javascript
@@ -1015,7 +1026,7 @@
 
 ### 数组
 
-- _\[建议]_ 用字面量赋值。 eslint: [`no-array-constructor`](http://eslint.org/docs/rules/no-array-constructor.html)
+- <font color="#f0c929">[建议]</font> 用字面量赋值。 eslint: [`no-array-constructor`](http://eslint.org/docs/rules/no-array-constructor.html)
 
   ```javascript
   // bad
@@ -1025,7 +1036,7 @@
   const items = [];
   ```
 
-- _\[强制]_ 用[Array#push](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) 代替直接向数组中添加一个值。
+- <font color="#ff7171">[质量]</font> 用[Array#push](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) 代替直接向数组中添加一个值。
 
   ```javascript
   const someStack = [];
@@ -1037,7 +1048,7 @@
   someStack.push('abracadabra');
   ```
 
-- _\[建议]_ 用扩展运算符做数组浅拷贝，类似上面的对象浅拷贝
+- <font color="#f0c929">[建议]</font> 用扩展运算符做数组浅拷贝，类似上面的对象浅拷贝
 
   ```javascript
   // bad
@@ -1053,7 +1064,7 @@
   const itemsCopy = [...items];
   ```
 
-- _\[建议]_ 用 `...` 运算符而不是[`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from)来将一个可迭代的对象转换成数组。
+- <font color="#f0c929">[建议]</font> 用 `...` 运算符而不是[`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from)来将一个可迭代的对象转换成数组。
 
   ```javascript
   const foo = document.querySelectorAll('.foo');
@@ -1065,7 +1076,7 @@
   const nodes = [...foo];
   ```
 
-- _\[强制]_ 用 [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) 去将一个类数组对象转成一个数组。
+- <font color="#ff7171">[质量]</font> 用 [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) 去将一个类数组对象转成一个数组。
 
   ```javascript
   const arrLike = { 0: 'foo', 1: 'bar', 2: 'baz', length: 3 };
@@ -1077,7 +1088,7 @@
   const arr = Array.from(arrLike);
   ```
 
-- _\[建议]_ 用 [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) 而不是 `...` 运算符去做 map 遍历。 因为这样可以避免创建一个临时数组。
+- <font color="#f0c929">[建议]</font> 用 [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) 而不是 `...` 运算符去做 map 遍历。 因为这样可以避免创建一个临时数组。
 
   ```javascript
   // bad
@@ -1087,7 +1098,7 @@
   const baz = Array.from(foo, bar);
   ```
 
-- _\[强制]_ 在数组方法的回调函数中使用 return 语句。 如果函数体由一条返回一个表达式的语句组成， 并且这个表达式没有副作用， 这个时候可以忽略return。 eslint: [`array-callback-return`](http://eslint.org/docs/rules/array-callback-return)
+- <font color="#ff7171">[质量]</font> 在数组方法的回调函数中使用 return 语句。 如果函数体由一条返回一个表达式的语句组成， 并且这个表达式没有副作用， 这个时候可以忽略 return。 eslint: [`array-callback-return`](http://eslint.org/docs/rules/array-callback-return)
 
   ```javascript
   // good
@@ -1141,7 +1152,7 @@
   });
   ```
 
-- _\[强制]_ 如果一个数组有很多行，在数组的 `[` 后和 `]` 前断行。 请看下面示例
+- <font color="#16c79a">[风格]</font> 如果一个数组有很多行，在数组的 `[` 后和 `]` 前断行。 请看下面示例
 
   ```javascript
   // bad
@@ -1177,13 +1188,13 @@
   ];
   ```
 
-- _\[建议]_ 在编写底层组件时，数组循环尽量使用`for`
+- <font color="#f0c929">[建议]</font> 在编写底层组件时，数组循环尽量使用`for`
 
-  > Why? for循环效率最高
+  > Why? for 循环效率最高
 
 ### 解构
 
-- _\[强制]_ 用对象的解构赋值来获取和使用对象某个或多个属性值。 eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
+- <font color="#ff7171">[质量]</font> 用对象的解构赋值来获取和使用对象某个或多个属性值。 eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
 
   > Why? 解构使您不必为这些属性创建临时引用
 
@@ -1208,7 +1219,7 @@
   }
   ```
 
-- _\[强制]_ 用数组解构.
+- <font color="#ff7171">[质量]</font> 用数组解构.
 
   ```javascript
   const arr =;
@@ -1221,7 +1232,7 @@
   const [first, second] = arr;
   ```
 
-- _\[建议]_ 多个返回值用对象的解构，而不是数组解构。
+- <font color="#f0c929">[建议]</font> 多个返回值用对象的解构，而不是数组解构。
 
   > Why? 你可以在后期添加新的属性或者变换变量的顺序而不会打破原有的调用
 
@@ -1247,20 +1258,24 @@
 
 ### 字符串
 
-- _\[建议]_ 对 string 用反引号 。 eslint: [`quotes`](https://eslint.org/docs/rules/quotes.html)
+- <font color="#16c79a">[风格]</font> 对 string 优先使用单引号；当文本中需要使用引号时，永远选择需要转义最少量的引号。 eslint: [`quotes`](https://eslint.org/docs/rules/quotes.html)
 
   ```javascript
   // bad
-  const name = 'Capt. Janeway';
+  const name = "Capt. Janeway";
+
+  // bad - 文本中的单引号需要转义
+  const name = 'Capt. \'Alan\'.Janeway';
 
   // bad - 样例应该包含插入文字或换行
   const name = `Capt. Janeway`;
 
   // good
   const name = 'Capt. Janeway';
+  const name = "Capt. 'Alan'.Janeway";
   ```
 
-- _\[建议]_ 超过 100 个字符的字符串不应该用 string 串联成多行。
+- <font color="#f0c929">[建议]</font> 超过 80 个字符的字符串不应该用 string 串联成多行。
 
   > Why? 被折断的字符串工作起来是糟糕的而且使得代码更不易被搜索。
 
@@ -1283,7 +1298,7 @@
     'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
   ```
 
-- _\[强制]_ 用字符串模板而不是字符串拼接来组织可编程字符串。 eslint: [`prefer-template`](https://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](https://eslint.org/docs/rules/template-curly-spacing)
+- <font color="#ff7171">[质量]</font> 用字符串模板而不是字符串拼接来组织可编程字符串。 eslint: [`prefer-template`](https://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](https://eslint.org/docs/rules/template-curly-spacing)
 
   > Why? 模板字符串更具可读性、语法简洁、字符串插入参数。
 
@@ -1309,9 +1324,9 @@
   }
   ```
 
-- _\[强制]_ 永远不要在字符串中用`eval()`，他就是潘多拉盒子。 eslint: [`no-eval`](https://eslint.org/docs/rules/no-eval)
+- <font color="#ff7171">[质量]</font> 永远不要在字符串中用`eval()`，他就是潘多拉盒子。 eslint: [`no-eval`](https://eslint.org/docs/rules/no-eval)
 
-- _\[强制]_ 不要使用不必要的转义字符。eslint: [`no-useless-escape`](http://eslint.org/docs/rules/no-useless-escape)
+- <font color="#ff7171">[质量]</font> 不要使用不必要的转义字符。eslint: [`no-useless-escape`](http://eslint.org/docs/rules/no-useless-escape)
 
   > Why? 反斜线可读性差，所以他们只在必须使用时才出现哦
 
@@ -1328,7 +1343,7 @@
 
 ### 函数
 
-- _\[建议]_ 用命名函数表达式而不是函数声明。eslint: [`func-style`](http://eslint.org/docs/rules/func-style)
+- <font color="#f0c929">[建议]</font> 用命名函数表达式而不是函数声明。eslint: [`func-style`](http://eslint.org/docs/rules/func-style)
 
   > 函数表达式： const func = function () {}
 
@@ -1358,7 +1373,7 @@
   };
   ```
 
-- _\[强制]_ 把立即执行函数包裹在圆括号里。 eslint: [`wrap-iife`](http://eslint.org/docs/rules/wrap-iife.html)
+- <font color="#ff7171">[质量]</font> 把立即执行函数包裹在圆括号里。 eslint: [`wrap-iife`](http://eslint.org/docs/rules/wrap-iife.html)
 
   > Why? immediately invoked function expression = IIFE
   > Why? 一个立即调用的函数表达式是一个单元 - 把它和他的调用者（圆括号）包裹起来，在括号中可以清晰的地表达这些。
@@ -1371,7 +1386,7 @@
   })();
   ```
 
-- _\[强制]_ 不要在非函数块（if、while 等等）内声明函数。把这个函数分配给一个变量。浏览器会允许你这样做，但浏览器解析方式不同，这是一个坏消息。【详见`no-loop-func`】 eslint: [`no-loop-func`](http://eslint.org/docs/rules/no-loop-func.html)
+- <font color="#ff7171">[质量]</font> 不要在非函数块（if、while 等等）内声明函数。把这个函数分配给一个变量。浏览器会允许你这样做，但浏览器解析方式不同，这是一个坏消息。【详见`no-loop-func`】 eslint: [`no-loop-func`](http://eslint.org/docs/rules/no-loop-func.html)
 
 - **Note:** 在 ECMA-262 中 [块 `block`] 的定义是： 一系列的语句； 但是函数声明不是一个语句。 函数表达式是一个语句。
 
@@ -1392,7 +1407,7 @@
   }
   ```
 
-- _\[强制]_ 不要用`arguments`命名参数。他的优先级高于每个函数作用域自带的 `arguments` 对象， 这会导致函数自带的 `arguments` 值被覆盖
+- <font color="#ff7171">[质量]</font> 不要用`arguments`命名参数。他的优先级高于每个函数作用域自带的 `arguments` 对象， 这会导致函数自带的 `arguments` 值被覆盖
 
   ```javascript
   // bad
@@ -1406,7 +1421,7 @@
   }
   ```
 
-- _\[强制]_ 不要使用`arguments`，用 rest 语法`...`代替。 eslint: [`prefer-rest-params`](http://eslint.org/docs/rules/prefer-rest-params)
+- <font color="#ff7171">[质量]</font> 不要使用`arguments`，用 rest 语法`...`代替。 eslint: [`prefer-rest-params`](http://eslint.org/docs/rules/prefer-rest-params)
 
   > Why? `...`明确你想用那个参数。而且 rest 参数是真数组，而不是类似数组的`arguments`
 
@@ -1423,7 +1438,7 @@
   }
   ```
 
-- _\[强制]_ 用默认参数语法而不是在函数里对参数重新赋值。
+- <font color="#ff7171">[质量]</font> 用默认参数语法而不是在函数里对参数重新赋值。
 
   ```javascript
   // really bad
@@ -1449,7 +1464,7 @@
   }
   ```
 
-- _\[强制]_ 默认参数避免副作用
+- <font color="#ff7171">[质量]</font> 默认参数避免副作用
 
   > Why? 他会令人迷惑不解， 比如下面这个， a 到底等于几， 这个需要想一下。
 
@@ -1465,7 +1480,7 @@
   count(); // 3
   ```
 
-- _\[建议]_ 把默认参数赋值放在最后
+- <font color="#f0c929">[建议]</font> 把默认参数赋值放在最后
 
   ```javascript
   // bad
@@ -1479,7 +1494,7 @@
   }
   ```
 
-- _\[强制]_ 不要用函数构造器创建函数。 eslint: [`no-new-func`](http://eslint.org/docs/rules/no-new-func)
+- <font color="#ff7171">[质量]</font> 不要用函数构造器创建函数。 eslint: [`no-new-func`](http://eslint.org/docs/rules/no-new-func)
 
   > Why? 以这种方式创建函数将类似于字符串 eval()，这会打开漏洞。
 
@@ -1491,7 +1506,7 @@
   var subtract = Function('a', 'b', 'return a - b');
   ```
 
-- _\[强制]_ 函数签名部分要有空格。eslint: [`space-before-function-paren`](http://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks)
+- <font color="#16c79a">[风格]</font> 函数签名部分要有空格。eslint: [`space-before-function-paren`](http://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks)
 
   > Why? 统一性好，而且在你添加/删除一个名字的时候不需要添加/删除空格
 
@@ -1506,7 +1521,7 @@
   const y = function a() {};
   ```
 
-- _\[强制]_ 不要改参数. eslint: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html)
+- <font color="#ff7171">[质量]</font> 不要改参数. eslint: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html)
 
   > Why? 操作参数对象对原始调用者会导致意想不到的副作用。 就是不要改参数的数据结构，保留参数原始值和数据结构。
 
@@ -1522,7 +1537,7 @@
   }
   ```
 
-- _\[强制]_ 不要对参数重新赋值。 eslint: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html)
+- <font color="#ff7171">[质量]</font> 不要对参数重新赋值。 eslint: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html)
 
   > Why? 参数重新赋值会导致意外行为，尤其是对 `arguments`。这也会导致优化问题，特别是在 V8 里
 
@@ -1551,7 +1566,7 @@
   }
   ```
 
-- _\[强制]_ 用`spread`操作符`...`去调用多变的函数更好。 eslint: [`prefer-spread`](http://eslint.org/docs/rules/prefer-spread)
+- <font color="#ff7171">[质量]</font> 用`spread`操作符`...`去调用多变的函数更好。 eslint: [`prefer-spread`](http://eslint.org/docs/rules/prefer-spread)
 
   > Why? 这样更清晰，你不必提供上下文，而且你不能轻易地用`apply`来组成`new`
 
@@ -1571,7 +1586,7 @@
   new Date(...[2016, 8, 5]);
   ```
 
-- _\[强制]_ 调用或者书写一个包含多个参数的函数应该像这个指南里的其他多行代码写法一样： 每行只包含一个参数，每行逗号结尾。
+- <font color="#16c79a">[风格]</font> 调用或者书写一个包含多个参数的函数应该像这个指南里的其他多行代码写法一样： 每行只包含一个参数，每行逗号结尾。
 
   ```javascript
   // bad
@@ -1605,7 +1620,7 @@
 
 ### 箭头函数
 
-- _\[建议]_ 当你一定要用函数表达式（在回调函数里）的时候就用箭头表达式吧。 eslint: [`prefer-arrow-callback`](http://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](http://eslint.org/docs/rules/arrow-spacing.html)
+- <font color="#f0c929">[建议]</font> 当你一定要用函数表达式（在回调函数里）的时候就用箭头表达式吧。 eslint: [`prefer-arrow-callback`](http://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](http://eslint.org/docs/rules/arrow-spacing.html)
 
   > Why? 他创建了一个`this`的当前执行上下文的函数的版本，这通常就是你想要的；而且箭头函数是更简洁的语法
 
@@ -1625,7 +1640,7 @@
   });
   ```
 
-- _\[强制]_ 如果函数体由一个没有副作用的[表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions)语句组成，删除大括号和 return。否则，继续用大括号和 `return` 语句。 eslint: [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](https://eslint.org/docs/rules/arrow-body-style.html)
+- <font color="#ff7171">[质量]</font> 如果函数体由一个没有副作用的[表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions)语句组成，删除大括号和 return。否则，继续用大括号和 `return` 语句。 eslint: [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](https://eslint.org/docs/rules/arrow-body-style.html)
 
   > Why? 语法糖，当多个函数链在一起的时候好读
 
@@ -1670,7 +1685,7 @@
   });
   ```
 
-- _\[建议]_ 万一表达式涉及多行，把他包裹在圆括号里更可读。
+- <font color="#16c79a">[风格]</font> 万一表达式涉及多行，把他包裹在圆括号里更可读。
 
   > Why? 这样清晰的显示函数的开始和结束
 
@@ -1691,7 +1706,7 @@
   ));
   ```
 
-- _\[建议]_ 如果你的函数只有一个参数并且函数体没有大括号，就删除圆括号。否则，参数总是放在圆括号里。 注意： 一直用圆括号也是没问题，只需要配置 [“always” option](https://eslint.org/docs/rules/arrow-parens#always) for eslint. eslint: [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens.html)
+- <font color="#16c79a">[风格]</font> 如果你的函数只有一个参数并且函数体没有大括号，就删除圆括号。否则，参数总是放在圆括号里。eslint: [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens.html)
 
   > Why? 这样少一些混乱， 其实没啥语法上的讲究，就保持一个风格。
 
@@ -1720,7 +1735,7 @@
   });
   ```
 
-- _\[强制]_ 避免箭头函数(`=>`)和比较操作符（`<=, >=`）混淆. eslint: [`no-confusing-arrow`](http://eslint.org/docs/rules/no-confusing-arrow)
+- <font color="#ff7171">[质量]</font> 避免箭头函数(`=>`)和比较操作符（`<=, >=`）混淆. eslint: [`no-confusing-arrow`](http://eslint.org/docs/rules/no-confusing-arrow)
 
   ```js
   // bad
@@ -1739,7 +1754,7 @@
   };
   ```
 
-- _\[强制]_ 在隐式 return 中强制约束函数体的位置， 就写在箭头后面。 eslint: [`implicit-arrow-linebreak`](https://eslint.org/docs/rules/implicit-arrow-linebreak)
+- <font color="#16c79a">[风格]</font> 在隐式 return 中强制约束函数体的位置， 就写在箭头后面。 eslint: [`implicit-arrow-linebreak`](https://eslint.org/docs/rules/implicit-arrow-linebreak)
 
   ```javascript
   // bad
@@ -1750,16 +1765,12 @@
     (bar);
 
   // good
-  (foo) => bar;
-  (foo) => (bar);
-  (foo) => (
-    bar
-  )
+  foo => bar;
   ```
 
 ### 类 & 构造函数
 
-- _\[建议]_ 常用`class`，避免直接操作`prototype`
+- <font color="#f0c929">[建议]</font> 常用`class`，避免直接操作`prototype`
 
   > Why? `class`语法更简洁更易理解
 
@@ -1787,7 +1798,7 @@
   }
   ```
 
-- _\[建议]_ 用`extends`实现继承
+- <font color="#f0c929">[建议]</font> 用`extends`实现继承
 
   > Why? 它是一种内置的方法来继承原型功能而不打破`instanceof`
 
@@ -1810,7 +1821,7 @@
   }
   ```
 
-- _\[建议]_ 方法可以返回`this`来实现方法链
+- <font color="#f0c929">[建议]</font> 方法可以返回`this`来实现方法链
 
   ```javascript
   // bad
@@ -1845,7 +1856,7 @@
   luke.jump().setHeight(20);
   ```
 
-- _\[建议]_ 写一个定制的 toString()方法是可以的，只要保证它是可以正常工作且没有副作用的
+- <font color="#f0c929">[建议]</font> 写一个定制的 toString()方法是可以的，只要保证它是可以正常工作且没有副作用的
 
   ```javascript
   class Jedi {
@@ -1863,7 +1874,7 @@
   }
   ```
 
-- _\[强制]_ 如果没有具体说明，类有默认的构造方法。一个空的构造函数或只是代表父类的构造函数是不需要写的。 eslint: [`no-useless-constructor`](http://eslint.org/docs/rules/no-useless-constructor)
+- <font color="#ff7171">[质量]</font> 如果没有具体说明，类有默认的构造方法。一个空的构造函数或只是代表父类的构造函数是不需要写的。 eslint: [`no-useless-constructor`](http://eslint.org/docs/rules/no-useless-constructor)
 
   ```javascript
   // bad
@@ -1892,7 +1903,7 @@
   }
   ```
 
-- _\[强制]_ 避免重复类成员。 eslint: [`no-dupe-class-members`](http://eslint.org/docs/rules/no-dupe-class-members)
+- <font color="#ff7171">[质量]</font> 避免重复类成员。 eslint: [`no-dupe-class-members`](http://eslint.org/docs/rules/no-dupe-class-members)
 
   > Why? 重复类成员会默默的执行最后一个 —— 重复本身也是一个 bug
 
@@ -1922,7 +1933,7 @@
   }
   ```
 
-- _\[建议]_ 除非外部库或框架需要使用特定的非静态方法，否则类方法应该使用`this`或被做成静态方法。
+- <font color="#f0c929">[建议]</font> 除非外部库或框架需要使用特定的非静态方法，否则类方法应该使用`this`或被做成静态方法。
   作为一个实例方法应该表明它根据接收者的属性有不同的行为。eslint: [`class-methods-use-this`](https://eslint.org/docs/rules/class-methods-use-this)
 
   ```javascript
@@ -1957,7 +1968,7 @@
 
 ### 模块
 
-- _\[强制]_ 一个路径只 import 一次。
+- <font color="#ff7171">[质量]</font> 一个路径只 import 一次。
   eslint: [`no-duplicate-imports`](http://eslint.org/docs/rules/no-duplicate-imports)
 
   > Why? 从同一个路径下 import 多行会使代码难以维护
@@ -1975,7 +1986,7 @@
   import foo, { named1, named2 } from 'foo';
   ```
 
-- _\[强制]_ 不要导出可变的东西
+- <font color="#ff7171">[质量]</font> 不要导出可变的东西
   eslint: [`import/no-mutable-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md)
 
   > Why? 变化通常都是需要避免，特别是当你要输出可变的绑定。虽然在某些场景下可能需要这种技术，但总的来说应该导出常量。
@@ -1990,7 +2001,7 @@
   export { foo };
   ```
 
-- _\[强制]_ 在一个单一导出模块里，用 `export default` 更好。
+- <font color="#f0c929">[建议]</font> 在一个单一导出模块里，用 `export default` 更好。
   eslint: [`import/prefer-default-export`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md)
 
   > Why? 鼓励使用更多文件，每个文件只做一件事情并导出，这样可读性和可维护性更好。
@@ -2003,7 +2014,7 @@
   export default function foo() {}
   ```
 
-- _\[建议]_ `import` 放在其他所有语句之前。
+- <font color="#ff7171">[质量]</font> `import` 放在其他所有语句之前。
   eslint: [`import/first`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md)
 
   > Why? 让`import`放在最前面防止意外行为。
@@ -2022,25 +2033,7 @@
   foo.init();
   ```
 
-- _\[建议]_ 多行 import 应该缩进，就像多行数组和对象字面量
-
-  > Why? 花括号与样式指南中每个其他花括号块遵循相同的缩进规则，逗号也是。
-
-  ```javascript
-  // bad
-  import { longNameA, longNameB, longNameC, longNameD, longNameE } from 'path';
-
-  // good
-  import {
-    longNameA,
-    longNameB,
-    longNameC,
-    longNameD,
-    longNameE,
-  } from 'path';
-  ```
-
-- _\[强制]_ 在 import 语句里不允许 Webpack loader 语法
+- <font color="#ff7171">[质量]</font> 在 import 语句里不允许 Webpack loader 语法
   eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
 
   > Why? 一旦用 Webpack 语法在 import 里会把代码耦合到模块绑定器。最好是在`webpack.config.js`里写 webpack loader 语法
@@ -2057,7 +2050,7 @@
 
 ### 属性
 
-- _\[强制]_ 访问属性时使用点符号. eslint: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html)
+- <font color="#f0c929">[建议]</font> 访问属性时使用点符号. eslint: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html)
 
   ```javascript
   const luke = {
@@ -2072,7 +2065,7 @@
   const isJedi = luke.jedi;
   ```
 
-- _\[强制]_ 当获取的属性是变量时用方括号`[]`取
+- <font color="#f0c929">[建议]</font> 当获取的属性是变量时用方括号`[]`取
 
   ```javascript
   const luke = {
@@ -2087,7 +2080,7 @@
   const isJedi = getProp('jedi');
   ```
 
-- _\[强制]_ 做幂运算时用幂操作符 `**` 。 eslint: [`no-restricted-properties`](https://eslint.org/docs/rules/no-restricted-properties).
+- <font color="#ff7171">[质量]</font> 做幂运算时用幂操作符 `**` 。 eslint: [`no-restricted-properties`](https://eslint.org/docs/rules/no-restricted-properties).
 
   ```javascript
   // bad
@@ -2099,7 +2092,7 @@
 
 ### 变量
 
-- _\[强制]_ 用`const`或`let`声明变量。不这样做会导致全局变量。 我们想要避免污染全局命名空间。 eslint: [`no-undef`](http://eslint.org/docs/rules/no-undef) [`prefer-const`](http://eslint.org/docs/rules/prefer-const)
+- <font color="#ff7171">[质量]</font> 用`const`或`let`声明变量。不这样做会导致全局变量。 我们想要避免污染全局命名空间。 eslint: [`no-undef`](http://eslint.org/docs/rules/no-undef) [`prefer-const`](http://eslint.org/docs/rules/prefer-const)
 
   ```javascript
   // bad
@@ -2109,7 +2102,7 @@
   const superPower = new SuperPower();
   ```
 
-- _\[强制]_ 每个变量都用一个 `const` 或 `let`。 eslint: [`one-var`](http://eslint.org/docs/rules/one-var.html)
+- <font color="#ff7171">[质量]</font> 每个变量都用一个 `const` 或 `let`。 eslint: [`one-var`](http://eslint.org/docs/rules/one-var.html)
 
   > Why? 这种方式很容易去声明新的变量，你不用去考虑把`;`调换成`,`，或者引入一个只有标点的不同的变化。这种做法也可以是你在调试的时候单步每个声明语句，而不是一下跳过所有声明。
 
@@ -2131,7 +2124,7 @@
   const dragonball = 'z';
   ```
 
-- _\[建议]_ `const`放一起，`let`放一起
+- <font color="#f0c929">[建议]</font> `const`放一起，`let`放一起
 
   > Why? 在你需要分配一个新的变量， 而这个变量依赖之前分配过的变量的时候，这种做法是有帮助的
 
@@ -2158,7 +2151,7 @@
   let length;
   ```
 
-- _\[建议]_ 在你需要的地方声明变量，但是要放在合理的位置
+- <font color="#f0c929">[建议]</font> 在你需要的地方声明变量，但是要放在合理的位置
 
   > Why? `let` 和 `const` 都是块级作用域而不是函数级作用域
 
@@ -2197,7 +2190,7 @@
   }
   ```
 
-- _\[强制]_ 不要使用链接变量分配。 eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
+- <font color="#ff7171">[质量]</font> 不要使用链接变量分配。 eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
 
   > Why? 链接变量分配创建隐式全局变量。
 
@@ -2228,7 +2221,7 @@
   // `const` 也是如此
   ```
 
-- _\[建议]_ 不要使用一元自增自减运算符（`++`， `--`）. eslint [`no-plusplus`](http://eslint.org/docs/rules/no-plusplus)
+- <font color="#f0c929">[建议]</font> 不要使用一元自增自减运算符（`++`， `--`）. eslint [`no-plusplus`](http://eslint.org/docs/rules/no-plusplus)
 
   > Why? 根据 eslint 文档，一元增量和减量语句受到自动分号插入的影响，并且可能会导致应用程序中的值递增或递减的无声错误。 使用`num + = 1`而不是`num ++`或`num ++`语句来表达你的值也是更有表现力的。 禁止一元增量和减量语句还会阻止您无意地预增/预减值，这也会导致程序出现意外行为。
 
@@ -2261,7 +2254,7 @@
   const truthyCount = array.filter(Boolean).length;
   ```
 
-- _\[强制]_ 在赋值的时候避免在 `=` 前/后换行。 如果你的赋值语句超出 [`max-len`](https://eslint.org/docs/rules/max-len.html)， 那就用小括号把这个值包起来再换行。 eslint [`operator-linebreak`](https://eslint.org/docs/rules/operator-linebreak.html).
+- <font color="#ff7171">[质量]</font> 在赋值的时候避免在 `=` 前/后换行。 如果你的赋值语句超出 [`max-len`](https://eslint.org/docs/rules/max-len.html)， 那就用小括号把这个值包起来再换行。 eslint [`operator-linebreak`](https://eslint.org/docs/rules/operator-linebreak.html).
 
   > Why? 在 `=` 附近换行容易混淆这个赋值语句。
 
@@ -2283,7 +2276,7 @@
   const foo = 'superLongLongLongLongLongLongLongLongString';
   ```
 
-- _\[建议]_ 不允许有未使用的变量。 eslint: [`no-unused-vars`](https://eslint.org/docs/rules/no-unused-vars)
+- <font color="#f0c929">[建议]</font> 不允许有未使用的变量。 eslint: [`no-unused-vars`](https://eslint.org/docs/rules/no-unused-vars)
 
   > Why? 一个声明了但未使用的变量更像是由于重构未完成产生的错误。这种在代码中出现的变量会使阅读者迷惑。
 
@@ -2323,7 +2316,7 @@
 
 ### 声明提升
 
-- _\[强制]_ `var`声明会被提前到他的作用域的最前面，它分配的值还没有提前。`const` 和 `let`被赋予了新的调用概念[时效区 —— Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let)。 重要的是要知道为什么 [typeof 不再安全](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
+- <font color="#ff7171">[质量]</font> `var`声明会被提前到他的作用域的最前面，它分配的值还没有提前。`const` 和 `let`被赋予了新的调用概念[时效区 —— Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let)。 重要的是要知道为什么 [typeof 不再安全](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
 
   ```javascript
   // 我们知道这个不会工作，假设没有定义全局的notDefined
@@ -2354,7 +2347,7 @@
   }
   ```
 
-- _\[强制]_ 匿名函数表达式和 `var` 情况相同
+- <font color="#ff7171">[质量]</font> 匿名函数表达式和 `var` 情况相同
 
   ```javascript
   function example() {
@@ -2368,7 +2361,7 @@
   }
   ```
 
-- _\[强制]_ 已命名函数表达式提升他的变量名，不是函数名或函数体
+- <font color="#ff7171">[质量]</font> 已命名函数表达式提升他的变量名，不是函数名或函数体
 
   ```javascript
   function example() {
@@ -2395,7 +2388,7 @@
   }
   ```
 
-- _\[强制]_ 函数声明则提升了函数名和函数体
+- <font color="#ff7171">[质量]</font> 函数声明则提升了函数名和函数体
 
   ```javascript
   function example() {
@@ -2411,9 +2404,9 @@
 
 ### 比较运算 & 全等
 
-- _\[建议]_ 用 `===` 和 `!==` 而不是 `==` 和 `!=`. eslint: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html)
+- <font color="#f0c929">[建议]</font> 用 `===` 和 `!==` 而不是 `==` 和 `!=`. eslint: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html)
 
-- 条件语句如`if`语句使用强制`ToBoolean`抽象方法来评估它们的表达式，并且始终遵循以下简单规则：
+- <font color="#f0c929">[质量]</font>条件语句如`if`语句使用强制`ToBoolean`抽象方法来评估它们的表达式，并且始终遵循以下简单规则：
 
   - **Objects** 计算成 **true**
   - **Undefined** 计算成 **false**
@@ -2433,7 +2426,7 @@
   }
   ```
 
-- _\[建议]_ 布尔值用缩写，而字符串和数字要明确比较对象
+- <font color="#f0c929">[建议]</font> 布尔值用缩写，而字符串和数字要明确比较对象
 
   ```javascript
   // bad
@@ -2469,7 +2462,7 @@
 
 - 更多信息请见 Angus Croll 的[真理、平等和 JavaScript —— Truth Equality and JavaScript](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108)
 
-- _\[强制]_ 在`case`和`default`分句里用大括号创建一块包含语法声明的区域(e.g. `let`, `const`, `function`, and `class`). eslint rules: [`no-case-declarations`](http://eslint.org/docs/rules/no-case-declarations.html).
+- <font color="#ff7171">[质量]</font> 在`case`和`default`分句里用大括号创建一块包含语法声明的区域(e.g. `let`, `const`, `function`, and `class`). eslint rules: [`no-case-declarations`](http://eslint.org/docs/rules/no-case-declarations.html).
 
   > Why? 语法声明在整个`switch`的代码块里都可见，但是只有当其被分配后才会初始化，他的初始化时当这个`case`被执行时才产生。 当多个`case`分句试图定义同一个事情时就出问题了
 
@@ -2516,7 +2509,7 @@
   }
   ```
 
-- _\[建议]_ 三元表达式不应该嵌套，通常是单行表达式。
+- <font color="#f0c929">[建议]</font> 三元表达式不应该嵌套，通常是单行表达式。
 
   eslint rules: [`no-nested-ternary`](http://eslint.org/docs/rules/no-nested-ternary.html).
 
@@ -2535,7 +2528,7 @@
   const foo = maybe1 > maybe2 ? 'bar' : maybeNull;
   ```
 
-- _\[强制]_ 避免不需要的三元表达式
+- <font color="#ff7171">[质量]</font> 避免不需要的三元表达式
 
   eslint rules: [`no-unneeded-ternary`](http://eslint.org/docs/rules/no-unneeded-ternary.html).
 
@@ -2551,7 +2544,7 @@
   const baz = !c;
   ```
 
-- _\[强制]_ 用圆括号来混合这些操作符。 只有当标准的算术运算符(`+`, `-`, `*`, & `/`)， 并且它们的优先级显而易见时，可以不用圆括号括起来。 eslint: [`no-mixed-operators`](https://eslint.org/docs/rules/no-mixed-operators.html)
+- <font color="#ff7171">[质量]</font> 用圆括号来混合这些操作符。 只有当标准的算术运算符(`+`, `-`, `*`, & `/`)， 并且它们的优先级显而易见时，可以不用圆括号括起来。 eslint: [`no-mixed-operators`](https://eslint.org/docs/rules/no-mixed-operators.html)
 
   > Why? 这提高了可读性，并且明确了开发者的意图
 
@@ -2585,7 +2578,7 @@
 
 ### 代码块
 
-- _\[强制]_ 用大括号包裹多行代码块。 eslint: [`nonblock-statement-body-position`](https://eslint.org/docs/rules/nonblock-statement-body-position)
+- <font color="#16c79a">[风格]</font> 用大括号包裹多行代码块。 eslint: [`nonblock-statement-body-position`](https://eslint.org/docs/rules/nonblock-statement-body-position)
 
   ```javascript
   // bad
@@ -2609,7 +2602,7 @@
   }
   ```
 
-- _\[强制]_ `if`表达式的`else`和`if`的关闭大括号在一行。 eslint: [`brace-style`](http://eslint.org/docs/rules/brace-style.html)
+- <font color="#16c79a">[风格]</font> `if`表达式的`else`和`if`的关闭大括号在一行。 eslint: [`brace-style`](http://eslint.org/docs/rules/brace-style.html)
 
   ```javascript
   // bad
@@ -2630,7 +2623,7 @@
   }
   ```
 
-- _\[建议]_ 如果 `if` 语句中总是需要用 `return` 返回， 那后续的 `else` 就不需要写了。 `if` 块中包含 `return`， 它后面的 `else if` 块中也包含了 `return`， 这个时候就可以把 `return` 分到多个 `if` 语句块中。 eslint: [`no-else-return`](https://eslint.org/docs/rules/no-else-return)
+- <font color="#f0c929">[建议]</font> 如果 `if` 语句中总是需要用 `return` 返回， 那后续的 `else` 就不需要写了。 `if` 块中包含 `return`， 它后面的 `else if` 块中也包含了 `return`， 这个时候就可以把 `return` 分到多个 `if` 语句块中。 eslint: [`no-else-return`](https://eslint.org/docs/rules/no-else-return)
 
   ```javascript
   // bad
@@ -2696,7 +2689,7 @@
 
 ### 控制语句
 
-- _\[强制]_ 当你的控制语句(`if`, `while` 等)太长或者超过最大长度限制的时候， 把每一个(组)判断条件放在单独一行里。 逻辑操作符放在行首。
+- <font color="#16c79a">[风格]</font> 当你的控制语句(`if`, `while` 等)太长或者超过最大长度限制的时候， 把每一个(组)判断条件放在单独一行里。 逻辑操作符放在行尾。
 
   > Why? 把逻辑操作符放在行首是让操作符的对齐方式和链式函数保持一致。这提高了可读性，也让复杂逻辑更容易看清楚。
 
@@ -2728,17 +2721,9 @@
 
   // good
   if (
-    foo === 123
-    && bar === 'abc'
-  ) {
-    thing1();
-  }
-
-  // good
-  if (
-    (foo === 123 || bar === 'abc')
-    && doesItLookGoodWhenItBecomesThatLong()
-    && isThisReallyHappening()
+    (foo === 123 || bar === 'abc') &&
+    doesItLookGoodWhenItBecomesThatLong() &&
+    isThisReallyHappening()
   ) {
     thing1();
   }
@@ -2751,7 +2736,7 @@
 
 ### 注释
 
-- _\[强制]_ 多行注释用 `/** ... */`
+- <font color="#ff7171">[质量]</font> 多行注释用 `/** ... */`
 
   ```javascript
   // bad
@@ -2778,7 +2763,7 @@
   }
   ```
 
-- _\[强制]_ 单行注释用`//`，将单行注释放在被注释区域上面。如果注释不是在第一行，那么注释前面就空一行
+- <font color="#ff7171">[质量]</font> 单行注释用`//`，将单行注释放在被注释区域上面。如果注释不是在第一行，那么注释前面就空一行
 
   ```javascript
   // bad
@@ -2816,7 +2801,7 @@
   }
   ```
 
-- _\[强制]_ 所有注释开头空一个，方便阅读。 eslint: [`spaced-comment`](http://eslint.org/docs/rules/spaced-comment)
+- <font color="#ff7171">[质量]</font> 所有注释开头空一个，方便阅读。 eslint: [`spaced-comment`](http://eslint.org/docs/rules/spaced-comment)
 
   ```javascript
   // bad
@@ -2850,7 +2835,8 @@
   }
   ```
 
-- _\[强制]_ 文件顶部必须包含文件注释，文件注释需要包含以下几个内容：
+- <font color="#ff7171">[质量]</font> 文件顶部必须包含文件注释，文件注释需要包含以下几个内容：
+
   - `@file` 标明文件的用途
   - `@author` 按照`责任`进行排序。通常来说，就是找第一个人应该比找第二个人有效。`@author`中的名字原则上不允许删除。任何劳动成果都值得被尊重
 
@@ -2861,7 +2847,7 @@
   */
   ```
 
-- _\[建议]_ 函数/方法添加注释需要包含入参与出参说明
+- <font color="#f0c929">[建议]</font> 函数/方法添加注释需要包含入参与出参说明
 
   ```javascript
   /**
@@ -2881,7 +2867,7 @@
   }
   ```
 
-- _\[建议]_ 常量注释包含说明和类型信息
+- <font color="#f0c929">[建议]</font> 常量注释包含说明和类型信息
 
   ```javascript
   /**
@@ -2893,7 +2879,7 @@
   var REQUEST_URL ='myurl.do';
   ```
 
-- _\[强制]_ 对于内部实现、不容易理解的逻辑说明、摘要信息等，需要写细节注释，细节注释遵循单行注释的格式
+- <font color="#ff7171">[质量]</font> 对于内部实现、不容易理解的逻辑说明、摘要信息等，需要写细节注释，细节注释遵循单行注释的格式
 
   ```javascript
   function foo(p1, p2, opt_p3){
@@ -2905,7 +2891,8 @@
   }
   ```
 
-- _\[强制]_ 在代码不完善的地方使用特殊标记注释，特殊标记包含以下几个：
+- <font color="#ff7171">[质量]</font> 在代码不完善的地方使用特殊标记注释，特殊标记包含以下几个：
+
   - `TODO` 有功能待实现。此时需要对将要实现的功能进行简单说明。
   - `FIXME` 该处代码运行没问题，但可能由于时间赶或者其他原因，需要修正。此时需要对如何修正进行简单说明。
   - `HACK` 为修正某些问题而写的不太好或者使用了某些诡异手段的代码。此时需要对思路或诡异手段进行描述。
@@ -2921,21 +2908,21 @@
   }
   ```
 
-- _\[强制]_ 对于暂时不使用注释的代码块，必须写明注释，不允许简单的注释掉
+- <font color="#ff7171">[质量]</font> 对于暂时不使用注释的代码块，必须写明注释，不允许简单的注释掉
 
-  > Why? 代码被注释有2种原因。1、后续会恢复这段代码逻辑；2、永久不用。前者如果没有备注信息，难以知晓注释动机。后者建议直接删掉（代码仓库保存了历史代码）。
+  > Why? 代码被注释有 2 种原因。1、后续会恢复这段代码逻辑；2、永久不用。前者如果没有备注信息，难以知晓注释动机。后者建议直接删掉（代码仓库保存了历史代码）。
 
-- _\[强制]_ 代码修改的同时，注释也要进行相应的修改，尤其是参数、返回值、异常、核心逻辑等的修改
+- <font color="#ff7171">[质量]</font> 代码修改的同时，注释也要进行相应的修改，尤其是参数、返回值、异常、核心逻辑等的修改
 
   > Why? 代码与注释更新不同步，就像路网与导航软件更新不同步一样，如果导航软件严重滞后，就失去了导航的意义。
 
-- _\[强制]_ 与其“半吊子”英文来注释，不如用中文注释把问题说清楚。专有名词与关键字保持英文原文即可
+- <font color="#ff7171">[质量]</font> 与其“半吊子”英文来注释，不如用中文注释把问题说清楚。专有名词与关键字保持英文原文即可
 
-- _\[强制]_ 好的命名、代码结构是自解释的，注释力求精简准确、表达到位。避免出现注释的一个极端：过多过滥的注释，代码的逻辑一旦修改，修改注释是相当大的负担
+- <font color="#ff7171">[质量]</font> 好的命名、代码结构是自解释的，注释力求精简准确、表达到位。避免出现注释的一个极端：过多过滥的注释，代码的逻辑一旦修改，修改注释是相当大的负担
 
 ### 类型转换
 
-- _\[强制]_ 请在注释中解释为什么要用移位运算和你在做什么。无论你做什么狂野的事，比如由于 `parseInt` 是你的性能瓶颈导致你一定要用移位运算。 请说明这个是因为[性能原因](https://jsperf.com/coercion-vs-casting/3),
+- <font color="#ff7171">[质量]</font> 请在注释中解释为什么要用移位运算和你在做什么。无论你做什么狂野的事，比如由于 `parseInt` 是你的性能瓶颈导致你一定要用移位运算。 请说明这个是因为[性能原因](https://jsperf.com/coercion-vs-casting/3),
 
   ```javascript
   // good
@@ -2954,7 +2941,7 @@
   2147483649 >> 0; //=> -2147483647
   ```
 
-- _\[建议]_ 布尔:
+- <font color="#f0c929">[建议]</font> 布尔:
 
   ```javascript
   const age = 0;
@@ -2968,3 +2955,30 @@
   // best
   const hasAge = !!age;
   ```
+
+## 解释
+
+### 什么是 Prettier
+
+`Prettier`是一个**大多数规则**强制化的代码格式化工具，在往完全强制规范的方向发展。
+
+### 为什么是 prettier
+
+强制化的好处在于终结大部分关于代码格式的持续辩论。这种辩论往往痛苦且很难达成共识。而对于完全强制规范的[airbnb](https://github.com/airbnb)，由于历史原因，`Prettier`保留了一些较大争议的部分允许设置。例如是否需要加分号。
+
+### prettier 的优势
+
+对比`eslint`,`airbnb`,`Prettier`有以下优势
+
+- 覆盖面较广。规则不仅局限于 js，对于`jsx`、`vue`、`css`、`html`、`json`、`markdown`都有对应规则；
+- IDE 插件完善。支持市面上大多数常见的前端 IDE，可以使用插件快速格式化代码，操作方便友好
+- 速度快。对比`eslint`执行速度更快，等待时间更短，体验更好
+- 更完善的支持。支持 IDE 快速格式化，支持 git hook，支持命令行页面，支持外挂程序，支持浏览器
+
+### prettier 的劣势
+
+- 强制规则，没有自由的空间
+
+### 为什么不选择 eslint
+
+`eslint`与`Prettier`并不冲突。 `Prettier`支持与`eslint`集成。`Prettier`更偏向代码格式的美化，而对于错误的代码格式`Prettier`并不会处理。而`eslint`的规则除了代码格式化，还关心代码质量。为了更好的开发体验，更建议在开发时用`Prettier`进行代码美化，在提交时用`eslint`进行代码检测。

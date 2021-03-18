@@ -9,3 +9,4 @@
   - [CSS规范](page/css.md)
   - [HTML规范](page/html.md)
   - [图片规范](page/img.md)
+- [更新日志](CHANGELOG.md)
