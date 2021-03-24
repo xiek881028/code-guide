@@ -4,7 +4,7 @@
 - [前端代码规范]()
   - [项目工程规范](page/project.md)
   - [JS规范](page/js.md)
-  - [JS规范 - react](page/react.md)
+  - [JS规范 - React](page/react.md)
   - [JS规范 - Node](page/node.md)
   - [CSS规范](page/css.md)
   - [HTML规范](page/html.md)

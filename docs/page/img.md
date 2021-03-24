@@ -60,7 +60,9 @@
 - <font color="#ff7171">[质量]</font>图像颜色丰富且文件比较大的（> 40KB）优先考虑 JPEG 格式
 - <font color="#f0c929">[建议]</font>兼容条件允许时，优先考虑 WebP 代替 PNG 和 JPEG 格式
 
-> JPEG 图片条件允许，压缩至 80%品质即可，保证文字清晰。JPEG 导出时如果可以使用渐进式图片，优先使用渐进式
+> JPEG 图片条件允许，压缩至 60%品质即可，保证文字清晰。JPEG 导出时如果可以使用渐进式图片，优先使用渐进式
+
+> 可使用以下网址进行在线图片压缩[optimizilla](https://imagecompressor.com/zh/)、[tinypng](https://tinypng.com/)、[onlineimagetool](https://www.onlineimagetool.com/zh/)，也可以使用npm包[imagemin](https://www.npmjs.com/package/imagemin)，或shell工具[kuma-imagemin](https://www.npmjs.com/package/kuma-imagemin)
 
 ### 图片使用
 

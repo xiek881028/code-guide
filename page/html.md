@@ -42,7 +42,7 @@
 
   ```html
   <!DOCTYPE html>
-  <html lang="en">
+  <html lang="zh">
     <head>
       <title>title</title>
       <meta charset="UTF-8" />
@@ -71,6 +71,11 @@
   ```
 
 ## header
+
+### html
+
+- <font color="#ff7171">[质量]</font> `html`标签需要注明`lang`
+- <font color="#ff7171">[质量]</font> 需要标明所用字符集`<meta charset="UTF-8" />`
 
 ### title
 

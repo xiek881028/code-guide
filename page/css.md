@@ -27,22 +27,22 @@
 
   命名示例：
 
-  | ClassName  | 含义         |
-  | ---------- | ------------ |
-  | arrow      | 箭头图标     |
-  | bg         | 含义         |
-  | bar        | 栏（工具类） |
-  | crumb      | 面包屑       |
-  | btn        | 按钮         |
-  | title      | 标题         |
-  | chart      | 图表         |
-  | clearfix   | 清除浮动     |
-  | col        | 列           |
-  | error      | 错误         |
-  | hide       | 隐藏         |
-  | hightlight | 高亮         |
-  | icon       | 图标         |
-  | popup      | 弹窗         |
+| ClassName  | 含义         |
+| ---------- | ------------ |
+| arrow      | 箭头图标     |
+| bg         | 含义         |
+| bar        | 栏（工具类） |
+| crumb      | 面包屑       |
+| btn        | 按钮         |
+| title      | 标题         |
+| chart      | 图表         |
+| clearfix   | 清除浮动     |
+| col        | 列           |
+| error      | 错误         |
+| hide       | 隐藏         |
+| hightlight | 高亮         |
+| icon       | 图标         |
+| popup      | 弹窗         |
 
 ### 缩进、空格与空行
 
@@ -154,12 +154,12 @@
 
 - <font color="#ff7171">[质量]</font> `font-family`属性中字体族名称应使用英文`family name`，如有空格，放在引号中
 
-  | 字体            | 操作系统 | family name       |
-  | --------------- | -------- | ----------------- |
-  | 宋体 (中易宋体) | Windows  | SimSun            |
-  | 微软雅黑        | Windows  | Microsoft YaHei   |
-  | 华文黑体        | Mac/iOS  | STHeiti           |
-  | 文泉驿正黑      | Linux    | WenQuanYi Zen Hei |
+| 字体            | 操作系统 | family name       |
+| --------------- | -------- | ----------------- |
+| 宋体 (中易宋体) | Windows  | SimSun            |
+| 微软雅黑        | Windows  | Microsoft YaHei   |
+| 华文黑体        | Mac/iOS  | STHeiti           |
+| 文泉驿正黑      | Linux    | WenQuanYi Zen Hei |
 
 ### 安全字体
 
@@ -184,3 +184,27 @@
 ### Hack
 
 - <font color="#ff7171">[质量]</font> 对于需要添加`hack`时尽可能采取其他方式解决。如需使用`hcak`，必须在所在行注释标明版本以及作用
+
+### 浏览器前缀
+
+- <font color="#ff7171">[质量]</font> 书写带有浏览器引擎前缀的属性时，必须把不带前缀的属性书写在最后面。
+
+  ```css
+  /* bad */
+  .success {
+    transition: all 4s ease;
+    -webkit-transition: all 4s ease;
+    -moz-transition: all 4s ease;
+    -ms-transition: all 4s ease;
+    -o-transition: all 4s ease;
+  }
+
+  /* good */
+  .success {
+    -webkit-transition: all 4s ease;
+    -moz-transition: all 4s ease;
+    -ms-transition: all 4s ease;
+    -o-transition: all 4s ease;
+    transition: all 4s ease;
+  }
+  ```
