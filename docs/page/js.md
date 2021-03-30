@@ -4,6 +4,8 @@
 
 ## 原则
 
+cosnt单个单个定义
+
 ### 格式风格
 
 在**格式风格**上，以[prettier](https://prettier.io/)的格式规范为准。当本规范**有关格式风格部分**与[prettier](https://prettier.io/)规则不符时，以[prettier](https://prettier.io/)标准为准。对于该原则设定有疑惑可以阅读[为什么是 prettier](#为什么是-prettier)
@@ -22,13 +24,15 @@
 
 ### 模块风格
 
-- <font color="#ff7171">[质量]</font> 为了保证模块兼容性，运行在`nodejs`或需要同时运行在`nodejs`与浏览器的环境里的模块，使用`CommonJS`风格，只需要在浏览器端运行的模块，推荐使用`ES6`风格。
+- <font color="#f0c929">[建议]</font> 为了保证模块兼容性，运行在`nodejs`或需要同时运行在`nodejs`与浏览器的环境里的模块，使用`CommonJS`风格，只需要在浏览器端运行的模块，推荐使用`ES6`风格。
 
   > 前端模块目前分为`CommonJS`，`AMD`，`CMD`，`ES6`4 种风格，`nodejs`是`CommonJS`规范的主要实践者，可以保证最好的兼容性
 
 ### 文件
 
 - <font color="#ff7171">[质量]</font> `js`文件使用`utf-8`编码
+
+- 文件命名小驼峰 类 大驼峰 组件 大驼峰
 
 ### 缩进
 
@@ -135,7 +139,7 @@
   export default es6;↵
   ```
 
-- <font color="#ff7171">[质量]</font> 在一个代码块后下一条语句前空一行。
+- <font color="#f0c929">[建议]</font> 在一个代码块后下一条语句前空一行。
 
   ```javascript
   // bad
@@ -660,7 +664,7 @@
   }
   ```
 
-- <font color="#ff7171">[质量]</font> export default 导出模块 A，则这个文件名也叫 A.\*， import 时候的参数也叫 A。 大小写完全一致。
+- <font color="#f0c929">[建议]</font> export default 导出模块 A，则这个文件名也叫 A.\*， import 时候的参数也叫 A。 大小写完全一致。
 
   ```javascript
   // file 1 contents
@@ -697,7 +701,7 @@
   // ^ supports both insideDirectory.js and insideDirectory/index.js
   ```
 
-- <font color="#ff7171">[质量]</font> 当你 export-default 一个函数时，函数名用小驼峰，文件名需要和函数名一致。
+- <font color="#f0c929">[建议]</font> 当你 export-default 一个函数时，函数名用小驼峰，文件名需要和函数名一致。
 
   ```javascript
   function makeStyleGuide() {
@@ -707,7 +711,7 @@
   export default makeStyleGuide;
   ```
 
-- <font color="#ff7171">[质量]</font> 当你 export 一个结构体/类/单例/函数库/对象 时用大驼峰。
+- <font color="#f0c929">[建议]</font> 当你 export 一个结构体/类/单例/函数库/对象 时用大驼峰。
 
   ```javascript
   const AirbnbStyleGuide = {
@@ -717,7 +721,7 @@
   export default AirbnbStyleGuide;
   ```
 
-- <font color="#ff7171">[质量]</font> 简称和缩写应该全部大写或全部小写。
+- <font color="#f0c929">[建议]</font> 简称和缩写应该全部大写或全部小写。
 
   > Why? 名字都是给人读的，不是为了适应电脑的算法的。
 
@@ -752,7 +756,7 @@
   ];
   ```
 
-- <font color="#ff7171">[质量]</font> 你可以用全大写字母设置静态变量，他需要满足三个条件。
+- <font color="#f0c929">[建议]</font> 你可以用全大写字母设置静态变量，他需要满足三个条件。
 
   1. 导出变量
   1. 是 `const` 定义的， 保证不能被改变
@@ -844,7 +848,7 @@
   }
   ```
 
-- <font color="#ff7171">[质量]</font> 注意： `let`、`const`都是块级作用域
+- <font color="#f0c929">[建议]</font> 注意： `let`、`const`都是块级作用域
 
   ```javascript
   // const 和 let 都只存在于它定义的那个块级作用域
@@ -892,7 +896,7 @@
   };
   ```
 
-- <font color="#ff7171">[质量]</font> 用对象方法简写. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html)
+- <font color="#f0c929">[建议]</font> 用对象方法简写. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html)
 
   ```javascript
   // bad
@@ -1036,7 +1040,7 @@
   const items = [];
   ```
 
-- <font color="#ff7171">[质量]</font> 用[Array#push](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) 代替直接向数组中添加一个值。
+- <font color="#f0c929">[建议]</font> 用[Array#push](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) 代替直接向数组中添加一个值。
 
   ```javascript
   const someStack = [];
@@ -1076,7 +1080,7 @@
   const nodes = [...foo];
   ```
 
-- <font color="#ff7171">[质量]</font> 用 [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) 去将一个类数组对象转成一个数组。
+- <font color="#f0c929">[建议]</font> 用 [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) 去将一个类数组对象转成一个数组。
 
   ```javascript
   const arrLike = { 0: 'foo', 1: 'bar', 2: 'baz', length: 3 };
@@ -1219,7 +1223,7 @@
   }
   ```
 
-- <font color="#ff7171">[质量]</font> 用数组解构.
+- <font color="#f0c929">[建议]</font> 用数组解构.
 
   ```javascript
   const arr =;
@@ -1386,28 +1390,7 @@
   })();
   ```
 
-- <font color="#ff7171">[质量]</font> 不要在非函数块（if、while 等等）内声明函数。把这个函数分配给一个变量。浏览器会允许你这样做，但浏览器解析方式不同，这是一个坏消息。【详见`no-loop-func`】 eslint: [`no-loop-func`](http://eslint.org/docs/rules/no-loop-func.html)
-
-- **Note:** 在 ECMA-262 中 [块 `block`] 的定义是： 一系列的语句； 但是函数声明不是一个语句。 函数表达式是一个语句。
-
-  ```javascript
-  // bad
-  if (currentUser) {
-    function test() {
-      console.log('Nope.');
-    }
-  }
-
-  // good
-  let test;
-  if (currentUser) {
-    test = () => {
-      console.log('Yup.');
-    };
-  }
-  ```
-
-- <font color="#ff7171">[质量]</font> 不要用`arguments`命名参数。他的优先级高于每个函数作用域自带的 `arguments` 对象， 这会导致函数自带的 `arguments` 值被覆盖
+- <font color="#f0c929">[建议]</font> 不要用`arguments`命名参数。他的优先级高于每个函数作用域自带的 `arguments` 对象， 这会导致函数自带的 `arguments` 值被覆盖
 
   ```javascript
   // bad
@@ -1438,7 +1421,7 @@
   }
   ```
 
-- <font color="#ff7171">[质量]</font> 用默认参数语法而不是在函数里对参数重新赋值。
+- <font color="#f0c929">[建议]</font> 用默认参数语法而不是在函数里对参数重新赋值。
 
   ```javascript
   // really bad
@@ -1464,7 +1447,7 @@
   }
   ```
 
-- <font color="#ff7171">[质量]</font> 默认参数避免副作用
+- <font color="#f0c929">[建议]</font> 默认参数避免副作用
 
   > Why? 他会令人迷惑不解， 比如下面这个， a 到底等于几， 这个需要想一下。
 
@@ -2316,7 +2299,7 @@
 
 ### 声明提升
 
-- <font color="#ff7171">[质量]</font> `var`声明会被提前到他的作用域的最前面，它分配的值还没有提前。`const` 和 `let`被赋予了新的调用概念[时效区 —— Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let)。 重要的是要知道为什么 [typeof 不再安全](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
+- <font color="#f0c929">[建议]</font> `var`声明会被提前到他的作用域的最前面，它分配的值还没有提前。`const` 和 `let`被赋予了新的调用概念[时效区 —— Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let)。 重要的是要知道为什么 [typeof 不再安全](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
 
   ```javascript
   // 我们知道这个不会工作，假设没有定义全局的notDefined
@@ -2347,7 +2330,7 @@
   }
   ```
 
-- <font color="#ff7171">[质量]</font> 匿名函数表达式和 `var` 情况相同
+- <font color="#f0c929">[建议]</font> 匿名函数表达式和 `var` 情况相同
 
   ```javascript
   function example() {
@@ -2361,7 +2344,7 @@
   }
   ```
 
-- <font color="#ff7171">[质量]</font> 已命名函数表达式提升他的变量名，不是函数名或函数体
+- <font color="#f0c929">[建议]</font> 已命名函数表达式提升他的变量名，不是函数名或函数体
 
   ```javascript
   function example() {
@@ -2388,7 +2371,7 @@
   }
   ```
 
-- <font color="#ff7171">[质量]</font> 函数声明则提升了函数名和函数体
+- <font color="#f0c929">[建议]</font> 函数声明则提升了函数名和函数体
 
   ```javascript
   function example() {
@@ -2736,7 +2719,7 @@
 
 ### 注释
 
-- <font color="#ff7171">[质量]</font> 多行注释用 `/** ... */`
+- <font color="#f0c929">[建议]</font> 多行注释用 `/** ... */`
 
   ```javascript
   // bad
@@ -2763,7 +2746,7 @@
   }
   ```
 
-- <font color="#ff7171">[质量]</font> 单行注释用`//`，将单行注释放在被注释区域上面。如果注释不是在第一行，那么注释前面就空一行
+- <font color="#f0c929">[建议]</font> 单行注释用`//`，将单行注释放在被注释区域上面。如果注释不是在第一行，那么注释前面就空一行
 
   ```javascript
   // bad
@@ -2835,7 +2818,7 @@
   }
   ```
 
-- <font color="#ff7171">[质量]</font> 文件顶部必须包含文件注释，文件注释需要包含以下几个内容：
+- <font color="#f0c929">[建议]</font> 文件顶部必须包含文件注释，文件注释需要包含以下几个内容：
 
   - `@file` 标明文件的用途
   - `@author` 按照`责任`进行排序。通常来说，就是找第一个人应该比找第二个人有效。`@author`中的名字原则上不允许删除。任何劳动成果都值得被尊重
@@ -2879,7 +2862,7 @@
   var REQUEST_URL ='myurl.do';
   ```
 
-- <font color="#ff7171">[质量]</font> 对于内部实现、不容易理解的逻辑说明、摘要信息等，需要写细节注释，细节注释遵循单行注释的格式
+- <font color="#f0c929">[建议]</font> 对于内部实现、不容易理解的逻辑说明、摘要信息等，需要写细节注释，细节注释遵循单行注释的格式
 
   ```javascript
   function foo(p1, p2, opt_p3){
@@ -2891,7 +2874,7 @@
   }
   ```
 
-- <font color="#ff7171">[质量]</font> 在代码不完善的地方使用特殊标记注释，特殊标记包含以下几个：
+- <font color="#f0c929">[建议]</font> 在代码不完善的地方使用特殊标记注释，特殊标记包含以下几个：
 
   - `TODO` 有功能待实现。此时需要对将要实现的功能进行简单说明。
   - `FIXME` 该处代码运行没问题，但可能由于时间赶或者其他原因，需要修正。此时需要对如何修正进行简单说明。
@@ -2908,21 +2891,21 @@
   }
   ```
 
-- <font color="#ff7171">[质量]</font> 对于暂时不使用注释的代码块，必须写明注释，不允许简单的注释掉
+- <font color="#f0c929">[建议]</font> 对于暂时不使用注释的代码块，必须写明注释，不允许简单的注释掉
 
   > Why? 代码被注释有 2 种原因。1、后续会恢复这段代码逻辑；2、永久不用。前者如果没有备注信息，难以知晓注释动机。后者建议直接删掉（代码仓库保存了历史代码）。
 
-- <font color="#ff7171">[质量]</font> 代码修改的同时，注释也要进行相应的修改，尤其是参数、返回值、异常、核心逻辑等的修改
+- <font color="#f0c929">[建议]</font> 代码修改的同时，注释也要进行相应的修改，尤其是参数、返回值、异常、核心逻辑等的修改
 
   > Why? 代码与注释更新不同步，就像路网与导航软件更新不同步一样，如果导航软件严重滞后，就失去了导航的意义。
 
-- <font color="#ff7171">[质量]</font> 与其“半吊子”英文来注释，不如用中文注释把问题说清楚。专有名词与关键字保持英文原文即可
+- <font color="#f0c929">[建议]</font> 与其“半吊子”英文来注释，不如用中文注释把问题说清楚。专有名词与关键字保持英文原文即可
 
-- <font color="#ff7171">[质量]</font> 好的命名、代码结构是自解释的，注释力求精简准确、表达到位。避免出现注释的一个极端：过多过滥的注释，代码的逻辑一旦修改，修改注释是相当大的负担
+- <font color="#f0c929">[建议]</font> 好的命名、代码结构是自解释的，注释力求精简准确、表达到位。避免出现注释的一个极端：过多过滥的注释，代码的逻辑一旦修改，修改注释是相当大的负担
 
 ### 类型转换
 
-- <font color="#ff7171">[质量]</font> 请在注释中解释为什么要用移位运算和你在做什么。无论你做什么狂野的事，比如由于 `parseInt` 是你的性能瓶颈导致你一定要用移位运算。 请说明这个是因为[性能原因](https://jsperf.com/coercion-vs-casting/3),
+- <font color="#f0c929">[建议]</font> 请在注释中解释为什么要用移位运算和你在做什么。无论你做什么狂野的事，比如由于 `parseInt` 是你的性能瓶颈导致你一定要用移位运算。 请说明这个是因为[性能原因](https://jsperf.com/coercion-vs-casting/3),
 
   ```javascript
   // good

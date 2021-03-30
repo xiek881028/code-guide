@@ -20,21 +20,21 @@
 
 ### 命名
 
-- <font color="#ff7171">[质量]</font> 除非有特定的功能、组件要求等，禁止随意使用 id 来定义元素样式
+- <font color="#f0c929">[建议]</font> 除非有特定的功能、组件要求等，禁止随意使用 id 来定义元素样式
 
 ### 标签
 
 - <font color="#16c79a">[风格]</font> 标签必须合法且闭合、嵌套正确，标签名必须小写
-- <font color="#ff7171">[质量]</font> 标签语法无错误，需要符合语义化
+- <font color="#f0c929">[建议]</font> 标签语法无错误，需要符合语义化
 - <font color="#f0c929">[建议]</font> 标签的自定义属性以 data-开头，如：`<a href="#" data-num='18'></a>`
 
 ### 结构
 
 - <font color="#f0c929">[建议]</font> 除非有特殊原因，禁止在内联元素内包裹块级元素
-- <font color="#ff7171">[质量]</font> 元素嵌套建议每个块级元素独立一行，内联元素可选
-- <font color="#ff7171">[质量]</font> 结构应尽量简洁，避免使用额外的冗余嵌套
+- <font color="#f0c929">[建议]</font> 元素嵌套建议每个块级元素独立一行，内联元素可选
+- <font color="#f0c929">[建议]</font> 结构应尽量简洁，避免使用额外的冗余嵌套
 - <font color="#f0c929">[建议]</font> 结构块之间应保留一个空行
-- <font color="#ff7171">[质量]</font> html 的注释位于要注释的代码的上面，单独占一行
+- <font color="#f0c929">[建议]</font> html 的注释位于要注释的代码的上面，单独占一行
 
 ### 模板
 
@@ -74,17 +74,17 @@
 
 ### html
 
-- <font color="#ff7171">[质量]</font> `html`标签需要注明`lang`
-- <font color="#ff7171">[质量]</font> 需要标明所用字符集`<meta charset="UTF-8" />`
+- <font color="#f0c929">[建议]</font> `html`标签需要注明`lang`
+- <font color="#f0c929">[建议]</font> 需要标明所用字符集`<meta charset="UTF-8" />`
 
 ### title
 
-- <font color="#ff7171">[质量]</font> 页面必须包含`title`标签声明标题
+- <font color="#f0c929">[建议]</font> 页面必须包含`title`标签声明标题
 
 ### favicon
 
-- <font color="#ff7171">[质量]</font> 保证`favicon`必须可访问
+- <font color="#f0c929">[建议]</font> 保证`favicon`必须可访问
 
 ### viewport
 
-- <font color="#ff7171">[质量]</font> 必须指定页面`viewport`以保证对移动端最基本的支持
+- <font color="#f0c929">[建议]</font> 必须指定页面`viewport`以保证对移动端最基本的支持

@@ -14,15 +14,15 @@
 
 - <font color="#ff7171">[质量]</font> 同一目录下不得拥有同名的`.js`和`.jsx`文件
 - <font color="#ff7171">[质量]</font> 组件文件使用一致的`.js`或 `.jsx`。后缀禁止部分组件使用`.js`，部分组件使用 `.jsx`
-- <font color="#ff7171">[质量]</font> 每一个文件以`export default`的形式暴露一个组件
+- <font color="#f0c929">[建议]</font> 每一个文件以`export default`的形式暴露一个组件
   > 允许一个文件中存在多个不同的组件，但仅允许通过`export default`暴露一个组件，其它组件均定义为内部组件。
-- <font color="#ff7171">[质量]</font> 原则上单个组件内`state`数量不应超过`10`个，如果`state`数量过多，应考虑合并`state`或拆分成新的组件。如果无法调整，应注释说明情况
+- <font color="#f0c929">[建议]</font> 原则上单个组件内`state`数量不应超过`10`个，如果`state`数量过多，应考虑合并`state`或拆分成新的组件。如果无法调整，应注释说明情况
   > 过多的`state`会使组件过于庞大难以阅读，也会增加后续人员的维护难度
 
 ### 命名规则
 
-- <font color="#ff7171">[质量]</font> 组件名称与文件名称保持相同。同时组件名称应当能体现出组件的功能，以便通过观察文件名即确定使用哪一个组件
-- <font color="#ff7171">[质量]</font> 文件名使用帕斯卡命名. 如`ReservationCard.jsx`
+- <font color="#f0c929">[建议]</font> 组件名称与文件名称保持相同。同时组件名称应当能体现出组件的功能，以便通过观察文件名即确定使用哪一个组件
+- <font color="#f0c929">[建议]</font> 文件名使用帕斯卡命名. 如`ReservationCard.jsx`
 - <font color="#ff7171">[质量]</font> React 模块名使用帕斯卡命名，实例使用骆驼式命名。 eslint: [react/jsx-pascal-case](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
 
   ```jsx
@@ -116,7 +116,7 @@
 
 ### 属性
 
-- <font color="#ff7171">[质量]</font> 属性名使用小驼峰
+- <font color="#f0c929">[建议]</font> 属性名使用小驼峰
 
   ```jsx
   // bad
