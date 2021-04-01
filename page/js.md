@@ -2016,7 +2016,7 @@ cosnt单个单个定义
   foo.init();
   ```
 
-- <font color="#ff7171">[质量]</font> 在 import 语句里不允许 Webpack loader 语法
+- <font color="#f0c929">[建议]</font> 在 import 语句里不允许 Webpack loader 语法
   eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
 
   > Why? 一旦用 Webpack 语法在 import 里会把代码耦合到模块绑定器。最好是在`webpack.config.js`里写 webpack loader 语法
@@ -2237,7 +2237,7 @@ cosnt单个单个定义
   const truthyCount = array.filter(Boolean).length;
   ```
 
-- <font color="#ff7171">[质量]</font> 在赋值的时候避免在 `=` 前/后换行。 如果你的赋值语句超出 [`max-len`](https://eslint.org/docs/rules/max-len.html)， 那就用小括号把这个值包起来再换行。 eslint [`operator-linebreak`](https://eslint.org/docs/rules/operator-linebreak.html).
+- <font color="#16c79a">[风格]</font> 在赋值的时候避免在 `=` 前/后换行。 如果你的赋值语句超出 [`max-len`](https://eslint.org/docs/rules/max-len.html)， 那就用小括号把这个值包起来再换行。 eslint [`operator-linebreak`](https://eslint.org/docs/rules/operator-linebreak.html).
 
   > Why? 在 `=` 附近换行容易混淆这个赋值语句。
 
