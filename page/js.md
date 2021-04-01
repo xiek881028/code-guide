@@ -4,8 +4,6 @@
 
 ## 原则
 
-cosnt单个单个定义
-
 ### 格式风格
 
 在**格式风格**上，以[prettier](https://prettier.io/)的格式规范为准。当本规范**有关格式风格部分**与[prettier](https://prettier.io/)规则不符时，以[prettier](https://prettier.io/)标准为准。对于该原则设定有疑惑可以阅读[为什么是 prettier](#为什么是-prettier)
