@@ -36,7 +36,7 @@ cosnt单个单个定义
 
 ### 缩进
 
-- <font color="#16c79a">[风格]</font> tab 用两个空格. eslint: [`indent`](http://eslint.org/docs/rules/indent.html)
+- <font color="#16c79a">[风格]</font> tab 用`4`个空格. eslint: [`indent`](http://eslint.org/docs/rules/indent.html)
 
   ```javascript
   // bad

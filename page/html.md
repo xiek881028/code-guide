@@ -16,7 +16,7 @@
 
 ### 缩进
 
-- <font color="#16c79a">[风格]</font> html 缩进统一为`2`个空格
+- <font color="#16c79a">[风格]</font> html 缩进统一为`4`个空格
 
 ### 命名
 
